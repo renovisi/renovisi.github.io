@@ -1,8 +1,5 @@
 # Starter Astro
-Starter kit for Astro, AlpineJS and TailwindCSS projects.
-
-## Description
-This barebone starter kit serves as starting point when developing web applications or sites. It eliminates the need for base configuration for when building Astro projects AlpineJS and Tailwind.
+[renovisi.com](https://renovisi.com) source code.
 
 ## Installation
 Clone this repository to get started.
@@ -25,4 +22,4 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 ## License
 
-[MIT](https://github.com/mkfizi/starter-astro/blob/main/LICENSE)
+[MIT](https://github.com/renovisi/renovisi.github.io/blob/main/LICENSE)

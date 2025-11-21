@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @import './markdown.css';
+@import './docs.css';
 @import './shiki.css';
 
 /**

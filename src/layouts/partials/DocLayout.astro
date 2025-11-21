@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../BaseLayout.astro';
+import H1 from '../../components/partials/H1.astro';
+import Text from '../../components/partials/Text.astro';
+import Title from '../../components/partials/Text.astro';
+import Link from '../../components/partials/Link.astro';
+import List from '../../components/partials/List.astro';
+import ListItem from '../../components/partials/ListItem.astro';
+import ButtonLink from '../../components/partials/ButtonLink.astro';
+import Section from '../../components/partials/Section.astro';
+
+const { frontmatter } = Astro.props;
+const { 
+    title = frontmatter?.title,
+	page = 'Document',
+    headings = getHeadings(),
+} = Astro.props;
+---
+
+<BaseLayout title={title} page={page}>
+    <Section class="bg-dark pt-64!">
+        <H1 class="text-blue-500!">{title}</H1>
+    </Section>
+    <!-- Markdown Content -->
+    <div class="space-y-8 mt-8 docs">
+        <slot/>
+    </div>
+    <!-- END Markdown Content -->
+    <div class="mt-8 px-6 sm:px-8 lg:px-16 py-8 border-neutral-800 border-t">
+        <Link href="/" class="block underline">Back to Home</Link>
+    </div>
+</BaseLayout>

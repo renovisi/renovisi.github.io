@@ -1,0 +1,52 @@
+/**
+* Global styles for markdown content.
+*/
+
+/* Headings */
+.docs :where(h1) {
+    @apply px-6 sm:px-8 lg:px-16 font-medium text-white text-5xl sm:text-6xl lg:text-8xl;
+}
+
+.docs :where(h2) {
+    @apply px-6 sm:px-8 lg:px-16 font-medium text-white text-3xl sm:text-4xl lg:text-6xl;
+}
+
+.docs :where(h3) {
+    @apply px-6 sm:px-8 lg:px-16 font-medium text-white text-xl sm:text-2xl lg:text-4xl;
+}
+
+/* Paragraphs */
+.docs :where(p) {
+    @apply px-6 sm:px-8 lg:px-16 text-neutral-200 text-lg;
+}
+
+/* Links */
+.docs :where(a) {
+    @apply font-medium text-neutral-400 hover:text-white focus:text-white visited:text-neutral-200 text-sm cursor-pointer;
+} 
+
+/* Lists */
+.docs :where(ul) {
+    @apply space-y-2 ml-4 px-6 sm:px-8 lg:px-16 marker:text-neutral-200 leading-0 list-disc;
+}
+.docs :where(ol) {
+    @apply space-y-2 ml-4 px-6 sm:px-8 lg:px-16 marker:text-neutral-200 leading-0 list-decimal;
+}
+.docs :where(li) {
+    @apply text-neutral-200 text-lg;
+}
+
+/* Images */
+.docs :where(img) {
+    @apply rounded w-full h-auto object-cover;
+}
+
+/* Blockquotes */
+.docs :where(blockquote) {
+    @apply p-4 border-neutral-900 border-l-4;
+}
+
+/* Divider */
+.docs :where(hr) {
+    @apply border-neutral-800;
+}

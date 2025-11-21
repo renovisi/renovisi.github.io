@@ -1,0 +1,245 @@
+---
+import Section from '../../components/partials/Section.astro';
+import H2 from '../../components/partials/H2.astro';
+import H3 from '../../components/partials/H3.astro';
+import Text from '../../components/partials/Text.astro';
+import Title from '../../components/partials/Title.astro';
+import ButtonLink from '../../components/partials/ButtonLink.astro';
+---
+<Section id="why-build-a-website" class="space-y-2 bg-darker !p-2">
+    <div class="bg-dark px-4 sm:px-6 lg:px-14 py-16 border border-neutral-800 rounded-2xl">
+        <H2 class="max-w-4xl">Frequently Asked Questions</H2>
+    </div>
+    <div class="bg-dark py-8 border border-neutral-800 rounded-2xl"
+        x-data="{ isCollapse: false }"
+    >
+        <button type="button" class="flex justify-between items-center px-4 sm:px-6 lg:px-14 w-full text-left cursor-pointer"
+            x-on:click="isCollapse = !isCollapse;"
+        >
+            <span class="font-medium text-neutral-200 text-xl sm:text-2xl lg:text-4xl">How long does it take to build a website?</span>
+            <span class="[&_svg]:stroke-white [&_svg]:w-8 [&_svg]:h-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-selector"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l4 -4l4 4" /><path d="M16 15l-4 4l-4 -4" /></svg>
+            </span>
+        </button>
+        <div class="space-y-4 mt-8 px-4 sm:px-6 lg:px-14" 
+            x-show="isCollapse" 
+        >
+            <Text>The timeline depends on the size and complexity of your project</Text>
+            <div class="flex gap-4">
+                <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-help-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 16v.01" /><path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" /></svg>
+                </div>
+                <Title class="text-white">Single-page websites: 1–2 weeks</Title>
+            </div>
+            <div class="flex gap-4">
+                <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-help-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 16v.01" /><path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" /></svg>
+                </div>
+                <Title class="text-white">Limited multiple-page websites (4–8 pages): 3–6 weeks</Title>
+            </div>
+            <div class="flex gap-4">
+                <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-help-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 16v.01" /><path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" /></svg>
+                </div>
+                <Title class="text-white">Unlimited multi-page or custom-feature websites: 6–12 weeks</Title>
+            </div>
+            <Text>We provide a clear timeline during the Discovery phase and keep you updated at every milestone.</Text>
+        </div>
+    </div>
+    <div class="bg-dark py-8 border border-neutral-800 rounded-2xl"
+        x-data="{ isCollapse: false }"
+    >
+        <button type="button" class="flex justify-between items-center px-4 sm:px-6 lg:px-14 w-full text-left cursor-pointer"
+            x-on:click="isCollapse = !isCollapse;"
+        >
+            <span class="font-medium text-neutral-200 text-xl sm:text-2xl lg:text-4xl">Do I need to prepare content before we start?</span>
+            <span class="[&_svg]:stroke-white [&_svg]:w-8 [&_svg]:h-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-selector"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l4 -4l4 4" /><path d="M16 15l-4 4l-4 -4" /></svg>
+            </span>
+        </button>
+        <div class="space-y-4 mt-8 px-4 sm:px-6 lg:px-14" 
+            x-show="isCollapse" 
+        >
+            <Text>While having your content ready is helpful, it's not required. We guide you through what's needed: text, images, logos, and other media. If you need help, we can offer guidance, templates, or professional content creation as an add-on.</Text>
+        </div>
+    </div>
+    <div class="bg-dark py-8 border border-neutral-800 rounded-2xl"
+        x-data="{ isCollapse: false }"
+    >
+        <button type="button" class="flex justify-between items-center px-4 sm:px-6 lg:px-14 w-full text-left cursor-pointer"
+            x-on:click="isCollapse = !isCollapse;"
+        >
+            <span class="font-medium text-neutral-200 text-xl sm:text-2xl lg:text-4xl">Will my website be mobile-friendly?</span>
+            <span class="[&_svg]:stroke-white [&_svg]:w-8 [&_svg]:h-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-selector"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l4 -4l4 4" /><path d="M16 15l-4 4l-4 -4" /></svg>
+            </span>
+        </button>
+        <div class="space-y-4 mt-8 px-4 sm:px-6 lg:px-14" 
+            x-show="isCollapse" 
+        >
+            <Text>Absolutely. Every website we build is fully responsive, ensuring it looks and works perfectly on mobile, tablet, and desktop. This improves user experience, search rankings, and overall engagement.</Text>
+        </div>
+    </div>
+    <div class="bg-dark py-8 border border-neutral-800 rounded-2xl"
+        x-data="{ isCollapse: false }"
+    >
+        <button type="button" class="flex justify-between items-center px-4 sm:px-6 lg:px-14 w-full text-left cursor-pointer"
+            x-on:click="isCollapse = !isCollapse;"
+        >
+            <span class="font-medium text-neutral-200 text-xl sm:text-2xl lg:text-4xl">Can you help with SEO?</span>
+            <span class="[&_svg]:stroke-white [&_svg]:w-8 [&_svg]:h-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-selector"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l4 -4l4 4" /><path d="M16 15l-4 4l-4 -4" /></svg>
+            </span>
+        </button>
+        <div class="space-y-4 mt-8 px-4 sm:px-6 lg:px-14" 
+            x-show="isCollapse" 
+        >
+            <Text>Yes. We offer two levels of SEO:</Text>
+            <div class="flex gap-4">
+                <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-help-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 16v.01" /><path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" /></svg>
+                </div>
+                <Title class="text-white">Basic SEO: On-page structure, meta tags, mobile optimization, and sitemap submission which is ideal for small business or single-page sites.</Title>
+            </div>
+            <div class="flex gap-4">
+                <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-help-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 16v.01" /><path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" /></svg>
+                </div>
+                <Title class="text-white">Advanced SEO: Full on-page and technical SEO, keyword strategy, internal linking, performance optimization and analytics setup which is ideal for growing businesses wanting higher search visibility.</Title>
+            </div>
+        </div>
+    </div>
+    <div class="bg-dark py-8 border border-neutral-800 rounded-2xl"
+        x-data="{ isCollapse: false }"
+    >
+        <button type="button" class="flex justify-between items-center px-4 sm:px-6 lg:px-14 w-full text-left cursor-pointer"
+            x-on:click="isCollapse = !isCollapse;"
+        >
+            <span class="font-medium text-neutral-200 text-xl sm:text-2xl lg:text-4xl">Will I be able to update my website myself?</span>
+            <span class="[&_svg]:stroke-white [&_svg]:w-8 [&_svg]:h-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-selector"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l4 -4l4 4" /><path d="M16 15l-4 4l-4 -4" /></svg>
+            </span>
+        </button>
+        <div class="space-y-4 mt-8 px-4 sm:px-6 lg:px-14" 
+            x-show="isCollapse" 
+        >
+            <Text>Yes, except for starter package. We build websites on user-friendly platforms or provide a simple content management system (CMS) when needed. We'll also provide guidance or a short tutorial so you can manage content, images and updates independently.</Text>
+        </div>
+    </div>
+    <div class="bg-dark py-8 border border-neutral-800 rounded-2xl"
+        x-data="{ isCollapse: false }"
+    >
+        <button type="button" class="flex justify-between items-center px-4 sm:px-6 lg:px-14 w-full text-left cursor-pointer"
+            x-on:click="isCollapse = !isCollapse;"
+        >
+            <span class="font-medium text-neutral-200 text-xl sm:text-2xl lg:text-4xl">What happens after my website is launched?</span>
+            <span class="[&_svg]:stroke-white [&_svg]:w-8 [&_svg]:h-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-selector"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l4 -4l4 4" /><path d="M16 15l-4 4l-4 -4" /></svg>
+            </span>
+        </button>
+        <div class="space-y-4 mt-8 px-4 sm:px-6 lg:px-14" 
+            x-show="isCollapse" 
+        >
+            <Text>Launching your website is just the beginning. We offer post-launch support for bug fixes, improvements, content updates or adding new features. You can also opt for ongoing maintenance add on for peace of mind.</Text>
+        </div>
+    </div>
+    <div class="bg-dark py-8 border border-neutral-800 rounded-2xl"
+        x-data="{ isCollapse: false }"
+    >
+        <button type="button" class="flex justify-between items-center px-4 sm:px-6 lg:px-14 w-full text-left cursor-pointer"
+            x-on:click="isCollapse = !isCollapse;"
+        >
+            <span class="font-medium text-neutral-200 text-xl sm:text-2xl lg:text-4xl">Can I request custom features or integrations?</span>
+            <span class="[&_svg]:stroke-white [&_svg]:w-8 [&_svg]:h-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-selector"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l4 -4l4 4" /><path d="M16 15l-4 4l-4 -4" /></svg>
+            </span>
+        </button>
+        <div class="space-y-4 mt-8 px-4 sm:px-6 lg:px-14" 
+            x-show="isCollapse" 
+        >
+            <Text>Yes. From contact forms and booking systems to APIs and payment gateways, we can integrate most features. During Discovery, we'll discuss your needs and provide a clear plan and estimate for any custom work.</Text>
+        </div>
+    </div>
+    <div class="bg-dark py-8 border border-neutral-800 rounded-2xl"
+        x-data="{ isCollapse: false }"
+    >
+        <button type="button" class="flex justify-between items-center px-4 sm:px-6 lg:px-14 w-full text-left cursor-pointer"
+            x-on:click="isCollapse = !isCollapse;"
+        >
+            <span class="font-medium text-neutral-200 text-xl sm:text-2xl lg:text-4xl">How do payments work?</span>
+            <span class="[&_svg]:stroke-white [&_svg]:w-8 [&_svg]:h-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-selector"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l4 -4l4 4" /><path d="M16 15l-4 4l-4 -4" /></svg>
+            </span>
+        </button>
+        <div class="space-y-4 mt-8 px-4 sm:px-6 lg:px-14" 
+            x-show="isCollapse" 
+        >
+            <Text>We offer flexible payment options to suit your budget:</Text>
+            <div class="flex gap-4">
+                <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-help-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 16v.01" /><path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" /></svg>
+                </div>
+                <Title class="text-white">Typically split into 2–3 installments</Title>
+            </div>
+            <div class="flex gap-4">
+                <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-help-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 16v.01" /><path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" /></svg>
+                </div>
+                <Title class="text-white">First payment confirms the project</Title>
+            </div>
+            <div class="flex gap-4">
+                <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-help-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 16v.01" /><path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" /></svg>
+                </div>
+                <Title class="text-white">Middle payment(s) are due at milestones</Title>
+            </div>
+            <div class="flex gap-4">
+                <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-help-circle"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" /><path d="M12 16v.01" /><path d="M12 13a2 2 0 0 0 .914 -3.782a1.98 1.98 0 0 0 -2.414 .483" /></svg>
+                </div>
+                <Title class="text-white">Final payment is due at launch</Title>
+            </div>
+            <Text>We ensure all terms are clear in advance, with no hidden fees.</Text>
+        </div>
+    </div>
+    <div class="bg-dark py-8 border border-neutral-800 rounded-2xl"
+        x-data="{ isCollapse: false }"
+    >
+        <button type="button" class="flex justify-between items-center px-4 sm:px-6 lg:px-14 w-full text-left cursor-pointer"
+            x-on:click="isCollapse = !isCollapse;"
+        >
+            <span class="font-medium text-neutral-200 text-xl sm:text-2xl lg:text-4xl">Can you redesign my existing website?</span>
+            <span class="[&_svg]:stroke-white [&_svg]:w-8 [&_svg]:h-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-selector"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l4 -4l4 4" /><path d="M16 15l-4 4l-4 -4" /></svg>
+            </span>
+        </button>
+        <div class="space-y-4 mt-8 px-4 sm:px-6 lg:px-14" 
+            x-show="isCollapse" 
+        >
+            <Text>Yes. Whether your current website is outdated or underperforming, we can redesign it with modern design principles, optimized performance, and better user experience. We'll also ensure SEO and existing links are preserved during the transition.</Text>
+        </div>
+    </div>
+    <div class="bg-dark py-8 border border-neutral-800 rounded-2xl"
+        x-data="{ isCollapse: false }"
+    >
+        <button type="button" class="flex justify-between items-center px-4 sm:px-6 lg:px-14 w-full text-left cursor-pointer"
+            x-on:click="isCollapse = !isCollapse;"
+        >
+            <span class="font-medium text-neutral-200 text-xl sm:text-2xl lg:text-4xl">Do I need to provide hosting and domain?</span>
+            <span class="[&_svg]:stroke-white [&_svg]:w-8 [&_svg]:h-8">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-selector"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l4 -4l4 4" /><path d="M16 15l-4 4l-4 -4" /></svg>
+            </span>
+        </button>
+        <div class="space-y-4 mt-8 px-4 sm:px-6 lg:px-14" 
+            x-show="isCollapse" 
+        >
+            <Text>If you already have them, we can work with your existing domain and hosting. If not, we can recommend suitable options and handle the setup for you, ensuring everything is secure and optimized.</Text>
+        </div>
+    </div>
+</Section>
+<!-- <Section>
+    <H2 class="max-w-4xl">Your website is not just a digital brochure,&nbsp;<span class="text-blue-500">it’s your most critical tool.</span></H2>
+    <div class="flex sm:flex-row flex-col gap-4 mt-16">
+        <ButtonLink href="#">Start Now</ButtonLink>
+    </div>
+</Section> -->

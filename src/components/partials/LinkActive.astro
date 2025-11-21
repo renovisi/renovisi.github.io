@@ -1,0 +1,11 @@
+---
+const { 
+    href = '', 
+    class: className = '',
+    target = '',  
+} = Astro.props;
+---
+
+<a href={href ?? '#'} class={`inline-block font-medium text-white hover:text-neutral-200 focus:text-neutral-200 text-lg sm:text-base cursor-pointer ${className}`} target={target || undefined}>
+	<slot />
+</a>

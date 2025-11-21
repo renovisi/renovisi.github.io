@@ -1,0 +1,52 @@
+/**
+* Global styles for markdown content.
+*/
+
+/* Headings */
+.markdown :where(h1) {
+    @apply font-bold text-white text-2xl sm:text-3xl lg:text-4xl;
+}
+
+.markdown :where(h2) {
+    @apply font-semibold text-white text-xl sm:text-2xl lg:text-3xl;
+}
+
+.markdown :where(h3) {
+    @apply font-medium text-white sm:text-base text-lg sm:text-xl lg:text-2xl; 
+}
+
+/* Paragraphs */
+.markdown :where(p) {
+    @apply text-neutral-200 text-sm;
+}
+
+/* Links */
+.markdown :where(a) {
+    @apply font-medium text-neutral-400 hover:text-white focus:text-white visited:text-neutral-200 text-sm cursor-pointer;
+} 
+
+/* Lists */
+.markdown :where(ul) {
+    @apply space-y-2 ml-4 marker:text-neutral-200 leading-0 list-disc;
+}
+.markdown :where(ol) {
+    @apply space-y-2 ml-4 marker:text-neutral-200 leading-0 list-decimal;
+}
+.markdown :where(li) {
+    @apply text-neutral-200 text-sm;
+}
+
+/* Images */
+.markdown :where(img) {
+    @apply rounded w-full h-auto object-cover;
+}
+
+/* Blockquotes */
+.markdown :where(blockquote) {
+    @apply p-4 border-neutral-900 border-l-4;
+}
+
+/* Divider */
+.markdown :where(hr) {
+    @apply border-neutral-800;
+}

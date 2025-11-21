@@ -1,0 +1,9 @@
+---
+const { 
+    class: className = '', 
+} = Astro.props;
+---
+
+<li class={`text-neutral-200 text-sm ${className}`}>
+    <slot />
+</li>

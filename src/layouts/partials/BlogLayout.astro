@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../BaseLayout.astro';
+import H1 from '../../components/partials/H1.astro';
+import Text from '../../components/partials/Text.astro';
+import TextTitle from '../../components/partials/Text.astro';
+import Link from '../../components/partials/Link.astro';
+import List from '../../components/partials/List.astro';
+import ListItem from '../../components/partials/ListItem.astro';
+
+const { frontmatter } = Astro.props;
+const { 
+    title = frontmatter?.title,
+    date = frontmatter?.date,
+    description = frontmatter?.description,
+    image = frontmatter?.image,
+    tags = frontmatter?.tags,
+	page = 'Blog',
+    headings = getHeadings(),
+} = Astro.props;
+---
+
+<BaseLayout title={title} page={page} description={description} image={image}>
+     <div class="max-w-4xl">
+        <div class="space-y-2">
+            <H1>{title}</H1>
+            <Text>Published on: {date?.toString().slice(0,10)}</Text>
+        </div>
+        <!-- Table of Contents -->
+        { headings.length > 0 && (
+            <nav class="space-y-4 mt-8">
+				<TextTitle>Table of Contents</TextTitle>
+                <div class="p-4 border border-neutral-800 rounded w-fit">
+                    <List class="list-none!">
+                        {headings.map((heading: any) => (
+                            <ListItem class={
+                                heading.depth === 1 ? 'ml-0' :
+                                heading.depth === 2 ? 'ml-4' :
+                                heading.depth === 3 ? 'ml-8' : 'ml-0'
+                            }>
+                                <Link href={`#${heading.slug}`}>{heading.text}</Link>
+                            </ListItem>
+                        ))}
+                    </List>
+                </div>
+            </nav>
+        )}
+        <!-- END Table of Contents -->
+        <!-- Markdown Content -->
+        <div class="space-y-8 mt-8 markdown">
+            <slot/>
+        </div>
+        <!-- END Markdown Content -->
+        <!-- Tags -->
+        <div class="space-y-4 mt-16">
+            <TextTitle>Tags:</TextTitle>
+            {tags && tags.length > 0 && (
+                <div class="flex flex-wrap gap-2">
+                    {tags.map((tag: string) => (
+                        <Link href={`/blog/tags/${tag.toLowerCase()}`} class="underline">{tag.charAt(0).toUpperCase() + tag.slice(1)}</Link>
+                    ))}
+                </div>
+            )}
+        </div>
+        <!-- END Tags -->
+        <div class="mt-8">
+            <Link href="/blog">&larr; Back</Link>
+        </div>
+    </div>
+</BaseLayout>

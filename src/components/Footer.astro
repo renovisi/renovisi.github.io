@@ -1,0 +1,29 @@
+---
+import Text from '../components/partials/Text.astro';
+import Title from '../components/partials/Title.astro';
+import Link from '../components/partials/Link.astro';
+import ButtonLink from '../components/partials/ButtonLink.astro';
+---
+<!-- <footer class="bottom-1 left-1/2 absolute px-4 sm:px-10 pb-px w-full max-w-screen-xl -translate-x-1/2 transform"> -->
+<footer class="bg-darker border-neutral-800 border-t w-full">
+    <div class="mx-auto px-6 sm:px-10 lg:px-0 pt-32 max-w-screen-xl">
+        <div class="flex sm:flex-row flex-col justify-between items-start sm:items-end gap-8">
+            <div class="max-w-sm">
+                <Text>We are currently a digital nomad. Connect with us to schedule a meeting.</Text>
+                <ButtonLink class="mt-8">Connect Now</ButtonLink>
+            </div>
+            <div class="space-y-2">
+                <Title class="mb-4">DOCUMENTS</Title>
+                <Link class="block!">Terms and Conditions</Link>
+                <Link class="block!">Privacy Policy</Link>
+                <Link class="block!">Pricing Details</Link>
+            </div>
+        </div>
+        <div class="flex justify-between mt-32 pb-8">
+            <span class="text-neutral-200 text-sm">
+                <span>Copyright © </span><span x-text="new Date().getFullYear()"></span>
+            </span>
+            <span class="text-neutral-200 text-sm">Handcrafted without AI</span>
+        </div>
+    </div>
+</footer>

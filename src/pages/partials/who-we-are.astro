@@ -1,0 +1,32 @@
+---
+import Section from '../../components/partials/Section.astro';
+import H2 from '../../components/partials/H2.astro';
+import H3 from '../../components/partials/H3.astro';
+import Text from '../../components/partials/Text.astro';
+import Title from '../../components/partials/Title.astro';
+---
+<Section id="who-we-are" class="relative px-0! py-0! border-b-0! overflow-hidden">
+    <div class="px-6 sm:px-8 lg:px-16 py-16 border-neutral-800 border-b leading-[90px] sm:leading-[150px] lg:leading-[200px] xl:leading-[250px]">
+        <H2>Strategic and creative minds behind</H2>
+        <p class="relative font-medium text-[110px] text-white sm:text-[200px] lg:text-[260px] xl:text-[340px] tracking-tight"><span class="text-blue-500">.reno</span>visi</p>
+    </div>
+    <div class="grid grid-cols-2 sm:grid-cols-7 lg:grid-cols-6 divide-x divide-y divide-neutral-800">
+        <img src="/images/nuri.webp" class="sm:border-b-0 w-full h-auto" alt="nuri">
+        <div class="flex items-end sm:col-span-2 lg:col-span-1 px-6 sm:px-8 py-4 sm:border-b-0">
+            <div>
+                <p class="font-medium text-blue-500 text-xl sm:text-2xl lg:text-4xl geologica">nuri</p>
+                <Title class="text-white!">Operation</Title>
+            </div>
+        </div>
+        <div class="flex justify-end items-end sm:order-8 lg:order-5 col-span-2 sm:col-span-1 lg:col-span-2 px-6 sm:px-8 lg:px-16 sm:border-r-0 sm:border-b-0 sm:border-l">
+            <p class="font-medium text-neutral-200 text-6xl sm:text-7xl lg:text-9xl tracking-tight geologica">.r</p>
+        </div>
+        <img src="/images/mkfizi.webp" class="sm:border-b-0 w-full h-auto" alt="mkfizi">
+        <div class="flex items-end sm:col-span-2 lg:col-span-1 px-6 sm:px-8 py-4 sm:border-b-0">
+            <div>
+                <p class="font-medium text-blue-500 text-xl sm:text-2xl lg:text-4xl geologica">mkfizi</p>
+                <Title class="text-white!">Engineering</Title>
+            </div>
+        </div>
+    </div>
+</Section>

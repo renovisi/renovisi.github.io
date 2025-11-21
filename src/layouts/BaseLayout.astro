@@ -1,0 +1,43 @@
+---
+import '../assets/css/app.css';
+import Head from '../components/Head.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+const { 
+	title = null,
+	description = null,
+	page = null,
+    image = null,
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" x-data="app">
+	<head>
+		<Head title={title} description={description} image={image}/>
+	</head>
+	<body class="relative bg-dark min-h-dvh antialiased smooth-scroll">
+        <!-- Scroll Top Component -->
+        <button type="button" class="right-4 sm:right-8 bottom-4 sm:bottom-8 fixed inset-ring inset-ring-neutral-300 bg-darker disabled:opacity-60 [&>svg]:stroke-white p-2 rounded font-medium text-black dark:text-white text-sm cursor-pointer disabled:pointer-events-none" aria-label="Scroll to top."
+            x-data
+            x-on:click="window.scrollTo({ top: 0 })"
+        >
+            <span class="[&>svg]:w-5 [&>svg]:h-5 shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5l0 14"/><path d="M18 11l-6 -6"/><path d="M6 11l6 -6"/></svg>
+            </span>
+        </button>
+        <!-- END Scroll Top Component -->
+        <div class="background-pattern"></div>
+        <!-- Navbar Component -->
+        <Navbar page={page} />
+        <!-- END Navbar Component -->
+        <!-- Content -->
+        <main class="lg:mx-auto border-neutral-800 lg:border-x max-w-screen-xl min-h-dvh grow">  
+            <slot />
+        </main>
+        <!-- END Content -->   
+        <!-- Footer -->
+        <Footer />
+        <!-- END Footer -->
+    </body>
+</html>

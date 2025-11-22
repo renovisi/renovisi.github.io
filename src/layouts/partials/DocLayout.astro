@@ -19,12 +19,12 @@ const {
 ---
 
 <BaseLayout title={title} page={page}>
-    <Section class="pt-64!">
+    <Section class="bg-soft pt-64!">
         <H1 class="text-blue-500!">{title}</H1>
         <Text class="mt-8">Updated on: {date ? new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}</Text>
     </Section>
     <!-- Markdown Content -->
-    <div class="space-y-8 mt-8 docs">
+    <div class="space-y-8 bg-soft mt-8 docs">
         <slot/>
     </div>
     <!-- END Markdown Content -->

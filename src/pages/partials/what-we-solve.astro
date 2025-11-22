@@ -3,118 +3,47 @@ import Section from '../../components/partials/Section.astro';
 import H2 from '../../components/partials/H2.astro';
 import H3 from '../../components/partials/H3.astro';
 import Text from '../../components/partials/Text.astro';
+import Display from '../../components/partials/Display.astro';
 import Title from '../../components/partials/Title.astro';
 ---
-<Section id="what-we-solve" class="px-0! py-0!">
+<Section id="what-we-solve" class="bg-strong px-0! py-0!">
     <div class="flex lg:flex-row flex-col border-neutral-800 border-b lg:divide-x divide-y lg:divide-y-0 divide-neutral-800">
         <div class="px-6 sm:px-8 lg:px-16 py-8 lg:py-16 shrink-0">
             <Title>The renovisi solutions</Title>
         </div>
         <div class="px-6 sm:px-8 lg:px-16 py-8 lg:py-16">
             <H2>Build Your Online Presence</H2>
-            <Text class="mt-6">We are a web development agency that creates modern, fast, and high-performing websites designed to build your online presence and grow your business. Partnering with us means having a team that listens, understands, and builds with purpose. We handle everything from concept to launch so you can focus on running your business while we build the digital foundation for your growth.</Text>
+            <Display class="mt-4">Partnering with us means having a team that listens, understands and builds with purpose, handling everything so you can focus on growing your business.</Display>
         </div>
     </div>
     <div class="grid grid-cols-1 sm:grid-cols-2 divide-x divide-y divide-neutral-800">
-        <div class="px-6 sm:px-8 lg:px-16 py-8 lg:py-16">
+        <div class="flex gap-4 sm:gap-8 px-6 sm:px-8 lg:px-16 py-8 lg:py-16">
+            <div class="[&_svg]:stroke-blue-500 [&_svg]:lg:w-12 [&_svg]:w-8 [&_svg]:h-8 [&_svg]:lg:h-12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-terminal-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M8 9l3 3l-3 3" /><path d="M13 15l3 0" /><path d="M3 4m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /></svg>
+            </div>
             <H3>Modern, Minimalist and Professional Design</H3>
-            <Text class="mt-4">We craft visually clean, modern, and premium-looking designs that immediately build trust. Your website will look sharp, polished, and aligned with the standards of today's digital expectations.</Text>
-            <div class="space-y-4 mt-6">
-                <div class="flex items-start gap-4">
-                    <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
-                    </div>
-                    <Title class="text-white">Better first impressions</Title>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
-                    </div>
-                    <Title class="text-white">Stronger credibility</Title>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
-                    </div>
-                    <Title class="text-white">Customers take you seriously</Title>
-                </div>
-            </div>
         </div>
-        <div class="px-6 sm:px-8 lg:px-16 py-8 lg:py-16 border-r-0">
-            <H3>Built for Speed, Stability and Performance</H3>
-            <Text class="mt-4">We build websites with performance in mind, ensuring fast load times, smooth interactions, and a seamless user experience. Our sites are optimized for speed and stability, providing a solid foundation for your online presence.</Text>
-            <div class="space-y-4 mt-6">
-                <div class="flex items-start gap-4">
-                    <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
-                    </div>
-                    <Title class="text-white">Higher engagement rates</Title>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
-                    </div>
-                    <Title class="text-white">More sales conversions</Title>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
-                    </div>
-                    <Title class="text-white">Better ranking potential on Google</Title>
-                </div>
+        <div class="flex gap-4 sm:gap-8 px-6 sm:px-8 lg:px-16 py-8 lg:py-16">
+            <div class="[&_svg]:stroke-blue-500 [&_svg]:lg:w-12 [&_svg]:w-8 [&_svg]:h-8 [&_svg]:lg:h-12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-brand-speedtest"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5.636 19.364a9 9 0 1 1 12.728 0" /><path d="M16 9l-4 4" /></svg>
             </div>
+            <H3>Speed, Stability and Performance Focus</H3>
         </div>
-        <div class="px-6 sm:px-8 lg:px-16 py-8 lg:py-16 border-b-0">
-            <H3>Transparent Communication and Process</H3>
-            <Text class="mt-4">You’ll always know what’s happening without guessing, no confusing tech talk and no hidden steps. We keep communication honest and clear from day one until launch.</Text>
-            <div class="space-y-4 mt-6">
-                <div class="flex items-start gap-4">
-                    <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
-                    </div>
-                    <Title class="text-white">Less stress</Title>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
-                    </div>
-                    <Title class="text-white">Full clarity on progress</Title>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
-                    </div>
-                    <Title class="text-white">Confidence in every decision made</Title>
-                </div>
+        <div class="flex gap-4 sm:gap-8 px-6 sm:px-8 lg:px-16 py-8 lg:py-16">
+            <div class="[&_svg]:stroke-blue-500 [&_svg]:lg:w-12 [&_svg]:w-8 [&_svg]:h-8 [&_svg]:lg:h-12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-message-circle-share"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12.58 19.963a9.906 9.906 0 0 1 -4.88 -.963l-4.7 1l1.3 -3.9c-2.324 -3.437 -1.426 -7.872 2.1 -10.374c3.526 -2.501 8.59 -2.296 11.845 .48c2.13 1.817 3.055 4.368 2.692 6.82" /><path d="M16 22l5 -5" /><path d="M21 21.5v-4.5h-4.5" /></svg>
             </div>
+            <H3>Clear Communication and Process</H3>
         </div>
-        <div class="px-6 sm:px-8 lg:px-16 py-8 lg:py-16">
+        <div class="flex gap-4 sm:gap-8 px-6 sm:px-8 lg:px-16 py-8 lg:py-16">
+            <div class="[&_svg]:stroke-blue-500 [&_svg]:lg:w-12 [&_svg]:w-8 [&_svg]:h-8 [&_svg]:lg:h-12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-chart-dots-3"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 7m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M16 15m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" /><path d="M18 6m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M6 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /><path d="M9 17l5 -1.5" /><path d="M6.5 8.5l7.81 5.37" /><path d="M7 7l8 -1" /></svg>
+            </div>
             <H3>Scalable Solutions for Future Growth</H3>
-            <Text class="mt-4">Your business won't stay the same, so will your online presence. We build foundations that scale, adapt, and accommodate future features or expansions.</Text>
-            <div class="space-y-4 mt-6">
-                <div class="flex items-start gap-4">
-                    <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
-                    </div>
-                    <Title class="text-white">No need for expensive rebuilds</Title>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
-                    </div>
-                    <Title class="text-white">Easy improvements later</Title>
-                </div>
-                <div class="flex items-start gap-4">
-                    <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 [&_svg]:h-5">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-circle-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" /><path d="M9 12l2 2l4 -4" /></svg>
-                    </div>
-                    <Title class="text-white">A website that grows with you</Title>
-                </div>
-            </div>
         </div>
     </div>
 </Section>
-<Section>
+<Section class="bg-strong">
     <H3 class="max-w-4xl">When you build with <span class="text-blue-500">.reno</span>visi, you get more than just a website. You get a strategic partner committed to helping your business grow, stand out and succeed online.</H3>
 </Section>
 <Section class="px-0! py-0!">

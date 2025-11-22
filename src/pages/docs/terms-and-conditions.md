@@ -1,6 +1,7 @@
 ---
 layout: ../../layouts/partials/DocLayout.astro
 title: "Terms and Conditions"
+date: 2025-11-22
 ---
 
 ## Renovisi Digital — Website Development Terms and Conditions

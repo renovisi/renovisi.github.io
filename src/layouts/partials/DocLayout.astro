@@ -12,19 +12,32 @@ import Section from '../../components/partials/Section.astro';
 const { frontmatter } = Astro.props;
 const { 
     title = frontmatter?.title,
-	page = 'Document',
+    date = frontmatter?.date,
+	page = 'Documents',
     headings = getHeadings(),
 } = Astro.props;
+
+import { Fragment } from "astro/jsx-runtime";
+
+const html = String(children); // children is the slot content
+const wrappedHtml = html.replace(
+  /(<table[\s\S]*?<\/table>)/g,
+  '<div class="table-wrapper">$1</div>'
+);
 ---
 
 <BaseLayout title={title} page={page}>
-    <Section class="bg-dark pt-64!">
+    <Section class="pt-64!">
         <H1 class="text-blue-500!">{title}</H1>
+        <Text class="mt-8">Updated on: {date ? new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}</Text>
     </Section>
     <!-- Markdown Content -->
-    <div class="space-y-8 mt-8 docs">
+    <!-- <div class="space-y-8 mt-8 docs">
         <slot/>
-    </div>
+    </div> -->
+    <Fragment>
+    <div class="space-y-8 mt-8 docs" dangerouslySetInnerHTML={wrappedHtml} />
+    </Fragment>
     <!-- END Markdown Content -->
     <div class="mt-8 px-6 sm:px-8 lg:px-16 py-8 border-neutral-800 border-t">
         <Link href="/" class="block underline">Back to Home</Link>

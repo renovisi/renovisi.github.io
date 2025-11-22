@@ -10,7 +10,7 @@ const links = [
 ];
 ---
 
-<nav class="top-0 z-10 fixed bg-dark border-neutral-800 border-b w-full"
+<nav class="top-0 z-10 fixed bg-strong border-neutral-800 border-b w-full"
     x-data="{
         breakpoint: 1024,
         isNavbarMenuOpen: false,
@@ -38,7 +38,7 @@ const links = [
                 :inert="!isNavbarMenuOpen && window.innerWidth < breakpoint"
             >
                 <!-- Navbar Menu Drawer -->
-                <div class="top-0 right-0 fixed lg:relative bg-darker lg:bg-transparent px-4 sm:px-10 lg:px-18 xl:px-0 py-4 lg:py-0 border-neutral-800 lg:border-0 border-r w-full sm:w-64 lg:w-auto h-full lg:h-auto overflow-y-auto lg:overflow-y-visible">
+                <div class="top-0 right-0 fixed lg:relative bg-soft lg:bg-transparent px-4 sm:px-10 lg:px-18 xl:px-0 py-4 lg:py-0 border-neutral-800 lg:border-0 border-r w-full sm:w-64 lg:w-auto h-full lg:h-auto overflow-y-auto lg:overflow-y-visible">
                     <!-- Navbar Menu Close -->
                     <button type="button" class="hidden invisible top-4 right-4 sm:right-8 absolute hover:bg-blue-500 focus:bg-blue-500 disabled:opacity-60 [&_svg]:stroke-white p-2 rounded font-medium text-white text-sm cursor-pointer disabled:pointer-events-none" aria-controls="navbar-menu" aria-label="Close navbar menu."
                         x-on:click="isNavbarMenuOpen = false"
@@ -68,14 +68,14 @@ const links = [
             <!-- END Navbar Menu --> 
             <ButtonLink href="https://wa.me/60133377464?text=Hello%2C%20i%27m%20interested%20to%20have%20a%20website%20my%20business" target="_blank" >Get In Touch</ButtonLink>
             <!-- Navbar Menu Open -->
-            <button type="button" class="lg:hidden lg:invisible hover:bg-blue-500 focus:bg-blue-500 disabled:opacity-60 [&_svg]:stroke-white p-2 rounded font-medium text-white text-sm cursor-pointer disabled:pointer-events-none" aria-controls="navbar-menu" aria-label="Open navbar menu."
+            <!-- <button type="button" class="lg:hidden lg:invisible hover:bg-blue-500 focus:bg-blue-500 disabled:opacity-60 [&_svg]:stroke-white p-2 rounded font-medium text-white text-sm cursor-pointer disabled:pointer-events-none" aria-controls="navbar-menu" aria-label="Open navbar menu."
                 x-on:click="isNavbarMenuOpen = true"
                 :aria-expanded="isNavbarMenuOpen"
             >
                 <span class="[&_svg]:w-5 [&_svg]:h-5 shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l16 0"/><path d="M4 12l16 0"/><path d="M4 18l16 0"/></svg>
                 </span>
-            </button>
+            </button> -->
             <!-- END Navbar Menu Open -->
         </div>
     </div>

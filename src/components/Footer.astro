@@ -4,7 +4,7 @@ import Title from '../components/partials/Title.astro';
 import Link from '../components/partials/Link.astro';
 import ButtonLink from '../components/partials/ButtonLink.astro';
 ---
-<footer class="bg-darker border-neutral-800 border-t w-full">
+<footer class="bg-soft border-neutral-800 border-t w-full dark:darkest">
     <div class="relative mx-auto px-6 sm:px-10 lg:px-18 xl:px-0 pt-32 max-w-screen-xl">
         <div class="flex sm:flex-row flex-col justify-between items-start sm:items-end gap-8">
             <div class="max-w-sm">
@@ -12,18 +12,22 @@ import ButtonLink from '../components/partials/ButtonLink.astro';
                 <Text class="mt-4">We are currently a digital nomad. Connect with us to schedule a meeting.</Text>
                 <ButtonLink href="https://wa.me/60133377464?text=Hello%2C%20i%27m%20interested%20to%20have%20a%20website%20my%20business" target="_blank" class="mt-8">Connect Now</ButtonLink>
             </div>
-            <div class="space-y-2">
+            <!-- <div class="space-y-2">
                 <Title class="mb-4">DOCUMENTS</Title>
                 <Link href="/docs/terms-and-conditions" class="block!">Terms and Conditions</Link>
-                <Link class="block!">Privacy Policy</Link>
-                <Link class="block!">Pricing Details</Link>
-            </div>
+                <Link href="/docs/privacy-policy" class="block!">Privacy Policy</Link>
+                <Link href="/docs/pricing-details" class="block!">Pricing Details</Link>
+            </div> -->
         </div>
-        <div class="flex justify-between mt-32 pb-8">
+        <div class="flex sm:flex-row flex-col justify-between mt-32 pb-16">
             <span class="text-neutral-200 text-sm">
                 <span>Copyright © </span><span x-text="new Date().getFullYear()"></span>
             </span>
-            <span class="text-neutral-200 text-sm">Handcrafted without AI</span>
+            <div class="flex flex-wrap gap-2">
+                <a href="/docs/terms-and-conditions" class="inline-block text-neutral-200 hover:text-blue-500 text-sm underline cursor-pointer">Terms and Conditions</a>
+                <a href="/docs/privacy-policy" class="inline-block text-neutral-200 hover:text-blue-500 text-sm underline cursor-pointer">Privacy Policy</a>
+                <a href="/docs/pricing-details" class="inline-block text-neutral-200 hover:text-blue-500 text-sm underline cursor-pointer">Pricing Details</a>
+            </div>
         </div>
     </div>
 </footer>

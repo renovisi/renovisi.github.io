@@ -10,8 +10,14 @@
 [x-cloak] { display: none !important; }
 
 @theme {
-  --color-dark: #030712; /* Defines a single primary color */
-  --color-darker: #050c1f;
+  --color-soft: #0c111e; 
+  --color-medium: #090e1b;
+  --color-strong: #030712;
+  /* --color-stronger: #030712;
+  --color-lighter: #0c111e;
+  --color-light: #090e1b;
+  --color-dark: #030712;
+  --color-darker: #050c1f; */
 }
 
 .bg-pattern {

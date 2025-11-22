@@ -22,7 +22,7 @@
 
 /* Links */
 .docs :where(a) {
-    @apply font-medium text-neutral-400 hover:text-white focus:text-white visited:text-neutral-200 text-sm cursor-pointer;
+    @apply inline-block font-medium text-neutral-200 hover:text-blue-500 focus:text-blue-500 sm:text-base text-lg cursor-pointer;
 } 
 
 /* Lists */
@@ -48,5 +48,34 @@
 
 /* Divider */
 .docs :where(hr) {
-    @apply border-neutral-800;
+    @apply border border-neutral-800;
 }
+/* Tables */
+.docs :where(table) {
+    @apply min-w-max;
+}
+.docs :where(.table-wrapper) {
+    @apply w-full overflow-x-auto;
+}
+.docs :where(table) {
+    @apply border-neutral-800 border-y w-full text-neutral-200 text-lg text-left;
+    border-collapse: collapse;
+}
+.docs :where(th),
+.docs :where(td) {
+    @apply px-4 sm:px-8 py-3 border border-neutral-800;
+}
+.docs :where(td:first-child),
+.docs :where(th:first-child) {
+    @apply pl-6 sm:pl-8 lg:pl-16 border-l-0;
+}
+.docs :where(td:last-child),
+.docs :where(th:last-child) {
+    @apply pr-6 sm:pr-8 lg:pr-16 border-r-0;
+}
+/* .docs :where(tr) > :first-child {
+    @apply pr-6! sm:pr-8! lg:pr-16!;
+}
+.docs :where(tr) > :last-child {
+    @apply pl-6! sm:pl-8! lg:pl-16!;
+} */

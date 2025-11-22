@@ -51,11 +51,12 @@
     @apply border border-neutral-800;
 }
 /* Tables */
+
+.docs :where(div:has(table)) {
+    @apply w-full overflow-x-auto;
+}
 .docs :where(table) {
     @apply min-w-max;
-}
-.docs :where(.table-wrapper) {
-    @apply w-full overflow-x-auto;
 }
 .docs :where(table) {
     @apply border-neutral-800 border-y w-full text-neutral-200 text-lg text-left;

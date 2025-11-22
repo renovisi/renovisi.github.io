@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import alpinejs from '@astrojs/alpinejs';
 import tailwindcss from '@tailwindcss/vite';
 import shiki from './astro.plugins/shiki.ts';
+import tableWrapper from './astro.plugins/table-wrapper.ts';
 
 export default defineConfig({
     // Site metadata.
@@ -15,6 +16,7 @@ export default defineConfig({
 
     // Markdown configuration.
     markdown: { 
+        remarkPlugins: [ tableWrapper ],
         shikiConfig: shiki,
     },
     

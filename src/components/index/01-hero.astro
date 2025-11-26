@@ -1,0 +1,36 @@
+---
+import Section from '../Section.astro';
+import H1 from '../H1.astro';
+import Subtitle from '../Subtitle.astro';
+import Text from '../Text.astro';
+import ButtonLink from '../ButtonLink.astro';
+import ButtonLinkSecondary from '../ButtonLinkSecondary.astro';
+---
+
+<Section id="hero" class="relative pt-32">
+    <div class="absolute inset-0 bg-grid bg-grid-pattern bg-grid-transition-bottom"></div>
+    <div class="absolute inset-0 w-full h-full">
+        <div class="relative w-full h-full">
+            <div class="top-[17.5dvh] left-[10dvw] absolute [&_svg]:w-8 sm:[&_svg]:w-12 lg:[&_svg]:w-16 [&_svg]:h-8 sm:[&_svg]:h-12 lg:[&_svg]:h-16 [&_svg]:text-blue-300 animate-float">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 21v-4a4 4 0 1 1 4 4h-4" /><path d="M21 3a16 16 0 0 0 -12.8 10.2" /><path d="M21 3a16 16 0 0 1 -10.2 12.8" /><path d="M10.6 9a9 9 0 0 1 4.4 4.4" /></svg>
+            </div>
+            <div class="top-[16dvh] right-[15dvw] absolute [&_svg]:w-8 sm:[&_svg]:w-12 lg:[&_svg]:w-16 [&_svg]:h-8 sm:[&_svg]:h-12 lg:[&_svg]:h-16 [&_svg]:text-blue-300 animate-float" style="animation: float 4s ease-in-out infinite;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13 3l0 7l6 0l-8 11l0 -7l-6 0l8 -11" /></svg>
+            </div>
+            <div class="bottom-[5dvh] left-[12.5dvw] absolute [&_svg]:w-8 sm:[&_svg]:w-12 lg:[&_svg]:w-16 [&_svg]:h-8 sm:[&_svg]:h-12 lg:[&_svg]:h-16 [&_svg]:text-blue-300 animate-float" style="animation: float 5s ease-in-out infinite;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-transform"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 6a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M21 11v-3a2 2 0 0 0 -2 -2h-6l3 3m0 -6l-3 3" /><path d="M3 13v3a2 2 0 0 0 2 2h6l-3 -3m0 6l3 -3" /><path d="M15 18a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /></svg>
+            </div>
+            <div class="right-[17.5dvw] bottom-[7.5dvh] absolute [&_svg]:w-8 sm:[&_svg]:w-12 lg:[&_svg]:w-16 [&_svg]:h-8 sm:[&_svg]:h-12 lg:[&_svg]:h-16 [&_svg]:text-blue-300 animate-float">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-trending-up"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 17l6 -6l4 4l8 -8" /><path d="M14 7l7 0l0 7" /></svg>
+            </div>
+        </div>
+    </div>
+    <div class="z-1 relative mx-auto my-16 sm:my-24 lg:my-32 px-4 sm:px-8 w-full max-w-screen-lg text-center">
+        <H1>Revision Your Brand Digital Presence</H1>
+        <Subtitle class="mx-auto mt-6 max-w-3xl lg:max-w-4xl font-medium text-neutral-600!">Get a modern, fast and professional websites designed to convert traffic into paying customers and grow your brand</Subtitle>
+        <div class="flex justify-center gap-4 mt-12">
+            <ButtonLink href="#service" class="drop-shadow-blue-500/50 drop-shadow-xl hover:-translate-y-1">Learn More</ButtonLink>
+            <ButtonLinkSecondary href="#pricing" class="hover:-translate-y-1">View Pricing</ButtonLinkSecondary>
+        </div>
+    </div>
+</Section>

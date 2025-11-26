@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../BaseLayout.astro';
+
+import H1 from '../../components/H1.astro';
+import Text from '../../components/Text.astro';
+import Link from '../../components/Link.astro';
+
+const { frontmatter } = Astro.props;
+const { 
+    description = frontmatter?.description,
+    title = frontmatter?.title,
+    date = frontmatter?.date,
+	page = 'Documents',
+    headings = getHeadings(),
+} = Astro.props;
+
+---
+
+
+<BaseLayout title={title} page={page}>
+    <section >
+        <div class="relative bg-white-900 pt-48 sm:pt-56 pb-16 sm:pb-24 overflow-hidden">
+            <div class="absolute inset-0 bg-grid bg-grid-pattern"></div>
+            <div class="z-1 relative mx-auto px-4 sm:px-8 max-w-screen-xl">
+                <H1 >{title}</H1>
+                <Text class="mt-2">Updated on: {date ? new Date(date).toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }) : ''}</Text>
+            </div>
+        </div>
+        
+        <!-- Markdown Content -->
+        <div class="space-y-8 mx-auto px-4 sm:px-8 py-16 sm:py-24 max-w-screen-xl docs">
+            <slot/>
+            
+        </div>
+        <!-- END Markdown Content -->
+        <div class="space-y-8 mx-auto px-4 sm:px-8 pb-16 sm:pb-24 max-w-screen-xl">
+            <Link href="/" >Back to Home</Link>
+        </div>
+    </div>
+</BaseLayout>

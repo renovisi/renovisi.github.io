@@ -1,0 +1,236 @@
+---
+import Section from '../Section.astro';
+import H2 from '../H2.astro';
+import H3 from '../H3.astro';
+import Title1 from '../Title1.astro';
+import Title2 from '../Title2.astro';
+import Subtitle from '../Subtitle.astro'
+import Text from '../Text.astro';
+import Link from '../Link.astro';
+import Badge from '../Badge.astro';
+import ButtonLink from '../ButtonLink.astro';
+---
+
+<Section id="pricing">
+    <div class="relative flex lg:flex-row flex-col gap-8 sm:gap-16 xl:gap-32 mx-auto max-w-screen-xl"
+        x-data="{
+            activeSection: 'starter',
+            init() {
+                this.observeSections();
+            },
+            observeSections() {
+                const sections = ['starter', 'advance', 'premium'];
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            this.activeSection = entry.target.id;
+                        }
+                    });
+                }, {
+                    rootMargin: '-50% 0px -50% 0px',
+                    threshold: 0
+                });
+                
+                sections.forEach(id => {
+                    const element = document.getElementById(id);
+                    if (element) observer.observe(element);
+                });
+            },
+            scrollToSection(id) {
+                document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }"
+    >
+        <div class="flex flex-col justify-between px-4 sm:px-8 xl:px-0 shrink-0">
+            <div class="lg:top-32 lg:sticky lg:mb-32">
+                <H2 class="text-center lg:text-start">Pricing Designed<br/>For Every Brands</H2>
+                <ul class="hidden invisible lg:visible lg:block space-y-2 mt-16 pointer-events-none lg:pointer-events-auto">
+                    <li class="flex items-center gap-2.5">
+                        <span class="inline-block bg-black w-16 h-1 transition-all duration-300"></span>
+                        <a href="#starter" 
+                            @click.prevent="scrollToSection('starter')"
+                            class="font-bold text-2xl sm:text-3xl xl:text-4xl italic tracking-tight transition-all duration-300 cursor-pointer prompt"
+                            :class="activeSection === 'starter' ? 'text-blue-500' : 'text-black hover:text-blue-500'"
+                        >Starter</a>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <span class="inline-block bg-black w-16 h-1 transition-all duration-300"></span>
+                        <a href="#advance"
+                            @click.prevent="scrollToSection('advance')"
+                            class="font-bold text-2xl sm:text-3xl xl:text-4xl italic tracking-tight transition-all duration-300 cursor-pointer prompt"
+                            :class="activeSection === 'advance' ? 'text-blue-500' : 'text-black hover:text-blue-500'"
+                        >Advance</a>
+                    </li>
+                    <li class="flex items-center gap-2.5">
+                        <span class="inline-block bg-black w-16 h-1 transition-all duration-300"></span>
+                        <a href="#premium"
+                            @click.prevent="scrollToSection('premium')"
+                            class="font-bold text-2xl sm:text-3xl xl:text-4xl italic tracking-tight transition-all duration-300 cursor-pointer prompt"
+                            :class="activeSection === 'premium' ? 'text-blue-500' : 'text-black hover:text-blue-500'"
+                        >Premium</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="hidden invisible lg:visible lg:flex gap-1 pointer-events-none lg:pointer-events-auto">
+                <Text>More pricing details are available</Text>
+                <Link href="/docs/pricing" class="underline">here</Link>
+            </div>
+        </div>
+        <div class="space-y-8 sm:space-y-16 lg:space-y-32 px-4 sm:px-8 xl:px-0 lg:pt-48 grow">
+            <div id="starter" class="relative bg-gray-50/50 py-12 xl:py-16 pr-8 xl:pr-16 pl-16 xl:pl-28 rounded-2xl overflow-hidden">
+                <div class="absolute inset-0 bg-pattern bg-pattern-md opacity-5 w-full h-full"></div>
+                <H3 class="z-1 relative">Starter</H3>
+                <Subtitle class="z-1 relativelg:mt-2 text-black!">For brands without a website</Subtitle>
+                <div class="z-1 relative mt-6">
+                    <Title1 class="font-bold prompt">RM999</Title1>
+                </div>
+                <ul class="-left-8 xl:-left-12 z-1 relative space-y-1.5 xl:space-y-3 mt-8 xl:mt-12">
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">1 page website</Subtitle>
+                    </li>
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">Basic SEO setup</Subtitle>
+                    </li>
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">Contact form</Subtitle>
+                    </li>
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">.com domain & hosting</Subtitle>
+                    </li>
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">1 revision</Subtitle>
+                    </li>
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">1 hours maintenance</Subtitle>
+                    </li>
+                </ul>
+                <div class="z-1 relative mt-10 xl:mt-16">
+                    <ButtonLink class="drop-shadow-blue-500/50 drop-shadow-xl hover:-translate-y-1" href="https://wa.me/60133377464?text=Hello%2C%20I%E2%80%99m%20interested%20in%20the%20Starter%20package%20for%20my%20brand%27s%20website." target="_blank">Get Starter</ButtonLink>         
+                </div>
+            </div>
+
+            <div id="advance" class="relative bg-blue-50/50 py-12 xl:py-16 pr-8 xl:pr-16 pl-16 xl:pl-28 rounded-2xl overflow-hidden">
+                <div class="absolute inset-0 bg-pattern bg-pattern-sm opacity-5 w-full h-full"></div>
+                <H3 class="z-1 relative">Advance</H3>
+                <Subtitle class="z-1 relativelg:mt-2 text-black!">For ambitious growing brands</Subtitle>
+                <div class="z-1 relative mt-6">
+                    <Title1 class="font-bold prompt">RM2999</Title1>
+                </div>
+                <ul class="-left-8 xl:-left-12 z-1 relative space-y-1.5 xl:space-y-3 mt-8 xl:mt-12">
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">Up to 8 pages</Subtitle>
+                    </li>
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">SEO-friendly structure</Subtitle>
+                    </li>
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">Static CMS dashboard</Subtitle>
+                    </li>
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">.com domain & hosting</Subtitle>
+                    </li>
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">3 revisions</Subtitle>
+                    </li>
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">5 hours maintenance</Subtitle>
+                    </li>
+                </ul>
+                <div class="z-1 relative mt-10 xl:mt-16">
+                    <ButtonLink class="drop-shadow-blue-500/50 drop-shadow-xl hover:-translate-y-1" href="https://wa.me/60133377464?text=Hello%2C%20I%E2%80%99m%20interested%20in%20the%20Advance%20package%20for%20my%20brand%27s%20website." target="_blank">Get Advance</ButtonLink>         
+                </div>
+            </div>
+
+            <div id="premium" class="relative bg-gray-50/50 py-12 xl:py-16 pr-8 xl:pr-16 pl-16 xl:pl-28 rounded-2xl overflow-hidden">
+                <div class="absolute inset-0 bg-pattern bg-pattern-sm opacity-5 w-full h-full"></div>
+                <H3 class="z-1 relative">Premium</H3>
+                <Subtitle class="z-1 relativelg:mt-2 text-black!">For established brands</Subtitle>
+                <div class="z-1 relative mt-6">
+                    <Title2 class="font-bold prompt">Custom Quote</Title2>
+                </div>
+                <ul class="-left-8 xl:-left-12 z-1 relative space-y-1.5 xl:space-y-3 mt-8 xl:mt-12">
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">Unlimited pages</Subtitle>
+                    </li>
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">Fully optimized SEO</Subtitle>
+                    </li>
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">Advanced CMS</Subtitle>
+                    </li>
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">Advanced integrations</Subtitle>
+                    </li>
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">VPS hosting</Subtitle>
+                    </li>
+                    <li class="flex gap-2 xl:gap-4">
+                        <div class="[&_svg]:stroke-blue-500 mt-1 [&_svg]:w-5 xl:[&_svg]:w-8 [&_svg]:h-5 xl:[&_svg]:h-8">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-check"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg>
+                        </div>
+                        <Subtitle class="text-black!">Priority support</Subtitle>
+                    </li>
+                </ul>
+                <div class="z-1 relative mt-10 xl:mt-16">
+                    <ButtonLink class="drop-shadow-blue-500/50 drop-shadow-xl hover:-translate-y-1" href="https://wa.me/60133377464?text=Hello%2C%20I%E2%80%99m%20interested%20in%20the%20Premium%20package%20for%20my%20brand%27s%20website." target="_blank">Contact Sales</ButtonLink>         
+                </div>
+            </div>
+
+            <div class="lg:hidden lg:invisible flex gap-1 mt-4 lg:pointer-events-none">
+                <Text>More pricing details are available</Text>
+                <Link href="/docs/pricing" class="underline">here</Link>
+            </div>
+        </div>
+    </div>
+</Section>

@@ -1,0 +1,10 @@
+---
+const { 
+    class: className = '', 
+    ...rest
+} = Astro.props;
+---
+
+<h4 class={`font-bold tracking-tight text-black text-lg sm:text-xl xl:text-2xl ${className}`} {...rest}>
+    <slot />
+</h4>

@@ -1,0 +1,64 @@
+---
+import Text from '../Text.astro';
+import Title3 from '../Title3.astro';
+import Title4 from '../Title4.astro';
+import Link from '../Link.astro';
+import ButtonLink from '../ButtonLink.astro';
+---
+<footer class="bg-gray-900 py-16 sm:py-24 lg:py-32 w-full">
+    <div class="relative mx-auto px-4 sm:px-8 max-w-screen-xl">
+        <div class="flex lg:flex-row flex-col justify-between gap-8 lg:gap-16">
+            <div>
+                <Title4 class="text-white prompt">Digitize Your Brand Today</Title4>
+                <ButtonLink href="https://wa.me/60133377464?text=Hello%2C%20I%E2%80%99m%20interested%20to%20build%20a%20website%20for%20my%20business" target="_blank" class="inline-block mt-6">Start Now</ButtonLink>
+                <div class="mt-8 xl:mt-16 [&_svg]:w-16 [&_svg]:h-16 [&_svg]:text-blue-500">
+                    <svg width="384" height="384" viewBox="0 0 384 384" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M320 257C354.794 257 383 285.206 383 320V383H320C285.206 383 257 354.794 257 320V257H320Z" stroke="currentColor" stroke-width="4"/>
+                        <path d="M224 1C294.14 1 351 57.8598 351 128C351 198.14 294.14 255 224 255H1V1H224Z" stroke="currentColor" stroke-width="4"/>
+                        <path d="M159 1V383H1V1H159Z" stroke="currentColor" stroke-width="4"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="flex justify-between gap-4 lg:gap-12">
+                <div>
+                    <Title4 class="text-white uppercase prompt">Legal</Title4>
+                    <div class="space-y-2 mt-4">
+                        <a href="/legal/terms-and-conditions" class="block text-neutral-200 hover:text-blue-500 text-base sm:text-lg transition cursor-pointer">Terms & Conditions</a>
+                        <a href="/legal/privacy-policy" class="block text-neutral-200 hover:text-blue-500 text-base sm:text-lg transition cursor-pointer">Privacy Policy</a>
+                        <a href="/legal/pricing-details" class="block text-neutral-200 hover:text-blue-500 text-base sm:text-lg transition cursor-pointer">Pricing Details</a>
+                    </div>
+                </div>
+                <div>
+                    <Title4 class="text-white uppercase prompt">Contact</Title4>
+                    <div class="space-y-2 mt-4">
+                        <a href="mailto:hello@renovisi.com" class="flex gap-1 text-neutral-200 hover:text-blue-500 text-base sm:text-lg transition cursor-pointer">
+                            <span class="[&_svg]:stroke-white mt-1 rounded-full [&_svg]:w-5 [&_svg]:h-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-mail"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z" /><path d="M3 7l9 6l9 -6" /></svg>
+                            </span>
+                            <span>hello@renovisi.com</span>
+                        </a>
+                        <a href="tel:+60133377464" class="flex gap-1 text-neutral-200 hover:text-blue-500 text-base sm:text-lg transition cursor-pointer">
+                            <span class="[&_svg]:stroke-white mt-1 rounded-full [&_svg]:w-5 [&_svg]:h-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-device-mobile"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 5a2 2 0 0 1 2 -2h8a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-8a2 2 0 0 1 -2 -2v-14z" /><path d="M11 4h2" /><path d="M12 17v.01" /></svg>
+                            </span>
+                            <span>+6013-337 7464</span>
+                        </a>
+                        <p class="flex gap-1 text-neutral-200 text-base sm:text-lg cursor-pointer">
+                            <span class="[&_svg]:stroke-white mt-1 rounded-full [&_svg]:w-5 [&_svg]:h-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-map-pin"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /><path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" /></svg>
+                            </span>
+                            <span>Remote</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="my-8 sm:my-12 lg:my-16 text-gray-600"/>
+        <div class="flex sm:flex-row flex-col justify-between gap-1">
+            <p class="text-white text-sm lg:text-base">Renovisi Digital Sdn Bhd (202501005102)</p>
+            <p class="text-white text-sm lg:text-base">
+                <span>© </span><span x-text="new Date().getFullYear()"></span><span> All rights reserved.</span>
+            </p>
+        </div>
+    </div>
+</footer>

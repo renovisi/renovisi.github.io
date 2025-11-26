@@ -1,0 +1,12 @@
+---
+import type { restoreFocus } from "astro/virtual-modules/transitions-swap-functions.js";
+
+const { 
+    class: className = '', 
+    ...rest
+} = Astro.props;
+---
+
+<p class={`inline-block font-medium uppercase bg-blue-100 tracking-wider text-blue-500 text-xs py-1 px-2 rounded-full ${className}`} {...rest}>
+    <slot />
+</p>

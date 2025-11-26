@@ -1,0 +1,52 @@
+---
+import '../assets/css/app.css';
+import Head from '../components/layouts/Head.astro';
+import Navbar from '../components/layouts/Navbar.astro';
+import Footer from '../components/layouts/Footer.astro';
+
+const { 
+	title = null,
+	description,
+	page = null,
+    image = null,
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth" x-data="app">
+	<head>
+		<Head title={title} description={description} image={image}/>
+	</head>
+	<body class="relative bg-white min-h-dvh antialiased">
+        <button type="button" class="right-4 sm:right-8 bottom-4 sm:bottom-8 z-5 fixed bg-blue-500 hover:bg-blue-600 p-3 sm:p-4 rounded-full transition cursor-pointer" aria-label="Scroll to top."
+            x-data="{
+                show: false,
+                checkScroll() {
+                    this.show = window.scrollY > window.innerHeight;
+                }
+            }"
+            x-init="
+                checkScroll(); 
+                window.addEventListener('scroll', () => checkScroll())
+                $watch('show', value => {
+                    if (value) {
+                        $el.classList.remove('pointer-events-none');
+                    } else {
+                        $el.classList.add('pointer-events-none');
+                    }
+                });
+            "
+            x-on:click="window.scrollTo({ top: 0, behavior: 'smooth' })"
+            :class="{ 'opacity-0': !show }"
+        >
+            <span class="[&_svg]:stroke-white [&_svg]:w-5 [&_svg]:h-5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5l0 14"/><path d="M18 11l-6 -6"/><path d="M6 11l6 -6"/></svg>
+            </span>
+        </button>
+        <Navbar />
+        <main>
+            <slot />
+        </main>
+        <Footer />
+    </body>
+</html>

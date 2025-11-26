@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Prevent FOUC -->
+        <script is:inline>
+            // Toggle theme.
+            // localStorage.theme = 'dark';
+            document.documentElement.classList.toggle('dark', localStorage.theme === 'dark' || (!localStorage.theme && window.matchMedia('(prefers-color-scheme: dark)').matches) || (localStorage.theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches));
+        </script>
+        <!-- END Prevent FOUC -->
+        
+        <!-- Metadata -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#ffffff">
+        <meta name="robots" content="noindex">
+        <!-- END Metadata -->
+        <!-- Style -->
+        <style>
+            @import 'tailwindcss';
+        </style>
+        <!-- END Style -->
+        <title>Page Not Found</title>
+    </head>
+    <body>
+        <main class="flex justify-center items-center min-h-dvh">
+            <img src="/images/404.webp" alt="404 Page Not Found" />
+        </main>
+    </body>
+</html>

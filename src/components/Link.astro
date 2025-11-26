@@ -1,0 +1,10 @@
+---
+const { 
+    class: className = '', 
+    ...rest
+} = Astro.props;
+---
+
+<a class={`inline-block text-neutral-800 hover:text-blue-600 cursor-pointer text-base sm:text-lg transition ${className}`} {...rest}>
+    <slot />
+</a>

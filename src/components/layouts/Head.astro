@@ -1,0 +1,64 @@
+---
+const {
+    title = null,
+    site = "Renovisi",
+    description = "Renovisi is a web development expert that builds clean, modern and high-performing websites designed to attract customers and grow your business based in Malaysia.",
+    url = 'https://renovisi.com',
+    image = '/images/metadata.jpg',
+} = Astro.props;
+---
+<!-- Umami -->
+<script defer src="https://umami.mkfizi.dev/script.js" data-website-id="7ddc2d17-8fee-4bbd-a160-e394e5eb0cd0"></script>
+
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- Metadata -->
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#ffffff">
+<meta name="generator" content={Astro.generator} />
+<!-- END Metadata -->
+<!-- SEO -->
+<meta name="title" content={title}>
+<meta name="description" content={description}>
+<meta name="robots" content="index, follow">
+<!-- END SEO -->	
+<!-- Facebook Open Graph -->
+<meta property="og:url" content={url}>
+<meta property="og:type" content="website">
+<meta property="og:title" content={title}>
+<meta property="og:image" content={image}>
+<meta property="og:description" content={description}>
+<meta property="og:site_name" content={site}>
+<!-- END Facebook Open Graph -->
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content={site}>
+<meta name="twitter:creator" content="@mkfizi">
+<meta name="twitter:url" content={url}>
+<meta name="twitter:title" content={title}>
+<meta name="twitter:description" content={description}>
+<meta name="twitter:image" content={image}>
+<!-- END Twitter Card -->
+<!-- Favicon -->
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+<link rel="manifest" href="/manifest.json">
+<!-- END Favicon -->
+
+<!-- Font Preload -->
+<link rel="preload" href="/fonts/Prompt/Prompt-Medium.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/Prompt/Prompt-Bold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/Prompt/Prompt-Black.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/PublicSans/PublicSans-Regular.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/PublicSans/PublicSans-Medium.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/PublicSans/PublicSans-SemiBold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/PublicSans/PublicSans-Bold.ttf" as="font" type="font/ttf" crossorigin>
+<link rel="preload" href="/fonts/PublicSans/PublicSans-Black.ttf" as="font" type="font/ttf" crossorigin>
+<!-- END Font Preload -->
+ 
+<title>{title && `${title} |`} {site}</title>

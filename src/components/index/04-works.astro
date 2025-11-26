@@ -1,0 +1,274 @@
+---
+import Section from '../Section.astro';
+import H2 from '../H2.astro';
+import H3 from '../H3.astro';
+import Text from '../Text.astro';
+import Link from '../Link.astro';
+import Button from '../Button.astro';
+import ButtonIcon from '../ButtonIcon.astro';
+---
+<Section id="works" class="overflow-hidden">
+    <div class="mx-auto max-w-screen-xl">
+        <div class="lg:flex lg:justify-end lg:items-center lg:gap-16 lg:ml-auto px-4 sm:px-8 xl:px-0">
+            <p class="opacity-40 text-stroke-black font-black text-[5rem] text-stroke text-white sm:text-[8rem] xl:text-[12rem] uppercase text-nowrap leading-32 tracking-wide shrink-0">Works</p>
+            <H2 class="pl-4 sm:pl-8 border-black border-l-8 max-w-lg lg:max-w-xl">We Build Websites That Build Brands</H2>
+        </div>
+        <div class="relative flex lg:flex-row flex-col lg:gap-4 xl:gap-16 mt-16"
+            x-data="{ 
+                breakpoint: 480,
+                currentImage: 1,
+                totalImages: 3,
+                scrollPosition: 0,
+                isPaused: false,
+                scrollInterval: null,
+                scrollContainer: null,
+                isInteractive: false,
+                touchStartX: 0,
+                touchEndX: 0,
+                
+                init() {
+                    this.scrollContainer = this.$refs.scrollContainer;
+                    this.startAutoScroll();
+                },
+                
+                enableInteraction() {
+                    this.isInteractive = true;
+                },
+
+                disableInteraction() {
+                    this.isInteractive = false;
+                },
+                
+                handleSwipeStart(e) {
+                    this.touchStartX = e.touches[0].clientX;
+                },
+                
+                handleSwipeEnd(e) {
+                    this.touchEndX = e.changedTouches[0].clientX;
+                    if (window.innerWidth < this.breakpoint && Math.abs(this.touchEndX - this.touchStartX) > 50) {
+                        this.enableInteraction();
+                    }
+                },
+                
+                startAutoScroll() {
+                    if (this.scrollInterval) return;
+                    
+                    this.scrollInterval = setInterval(() => {
+                        if (!this.isInteractive && !this.isPaused && this.scrollContainer) {
+                            const maxScroll = this.scrollContainer.scrollHeight - this.scrollContainer.clientHeight;
+                            
+                            if (this.scrollContainer.scrollTop >= maxScroll - 5) {
+                                this.isPaused = true;
+                                
+                                setTimeout(() => {
+                                    this.scrollContainer.classList.remove('scroll-smooth');
+                                    this.currentImage = this.currentImage < this.totalImages ? this.currentImage + 1 : 1;
+                                    this.scrollContainer.scrollTop = 0;
+                                    
+                                    setTimeout(() => {
+                                        this.scrollContainer.classList.add('scroll-smooth');
+                                    }, 100);
+                                    
+                                    setTimeout(() => {
+                                        this.isPaused = false;
+                                    }, 2000);
+                                }, 1000);
+                            } else {
+                                // window.innerWidth >= this.breakpoint ? this.scrollContainer.scrollTop += 1 : this.scrollContainer.scrollTop += 100;
+                                // console.log(navigator.userAgent, navigator.platform)
+                                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+                                if (window.innerWidth < this.breakpoint && isIOS) {
+                                    this.scrollContainer.scrollTop += 100;
+                                } else {
+                                    this.scrollContainer.scrollTop += 1;
+                                }
+                            }
+                        }
+                    }, 10);
+                },
+                
+                stopAutoScroll() {
+                    if (this.scrollInterval) {
+                        clearInterval(this.scrollInterval);
+                        this.scrollInterval = null;
+                    }
+                },
+                
+                next() {
+                    this.isPaused = true;
+                    this.scrollContainer.classList.remove('scroll-smooth');
+                    this.currentImage = this.currentImage < this.totalImages ? this.currentImage + 1 : 1;
+                    this.scrollContainer.scrollTop = 0;
+                    
+                    setTimeout(() => {
+                        this.scrollContainer.classList.add('scroll-smooth');
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        this.isPaused = false;
+                    }, 2000);
+                },
+                
+                prev() {
+                    this.isPaused = true;
+                    this.scrollContainer.classList.remove('scroll-smooth');
+                    this.currentImage = this.currentImage > 1 ? this.currentImage - 1 : this.totalImages;
+                    this.scrollContainer.scrollTop = 0;
+                    
+                    setTimeout(() => {
+                        this.scrollContainer.classList.add('scroll-smooth');
+                    }, 100);
+                    
+                    setTimeout(() => {
+                        this.isPaused = false;
+                    }, 2000);
+                }
+            }"
+        >
+            <div class="relative lg:px-4 xl:px-0 lg:w-3/4">
+                <div class="sm:hidden sm:invisible top-1/2 left-8 absolute flex -translate-y-1/2 sm:pointer-events-none transform"
+                    x-show="!isInteractive"
+                    x-transition:enter="transition-opacity duration-300"
+                    x-transition:enter-start="opacity-0"
+                    x-transition:enter-end="opacity-100"
+                    x-on:touchstart="handleSwipeStart($event)"
+                    x-on:touchend="handleSwipeEnd($event)"
+                >
+                    <div class="[&_svg]:stroke-black [&_svg]:w-12 [&_svg]:h-12 animate-swipe-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-chevron-compact-left icons-tabler-outline icon icon-tabler"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13 20l-3 -8l3 -8" /></svg>
+                    </div>
+                    <div class="relative [&_svg]:stroke-black -ml-8 [&_svg]:w-12 [&_svg]:h-12 animate-swipe-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-chevron-compact-left icons-tabler-outline icon icon-tabler"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13 20l-3 -8l3 -8" /></svg>
+                    </div>
+                    <div class="relative [&_svg]:stroke-black -ml-8 [&_svg]:w-12 [&_svg]:h-12 animate-swipe-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-chevron-compact-left icons-tabler-outline icon icon-tabler"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13 20l-3 -8l3 -8" /></svg>
+                    </div>
+                    <div class="relative [&_svg]:stroke-black -ml-8 [&_svg]:w-12 [&_svg]:h-12 animate-swipe-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-chevron-compact-left icons-tabler-outline icon icon-tabler"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13 20l-3 -8l3 -8" /></svg>
+                    </div>
+                    <div class="relative [&_svg]:stroke-black -ml-8 [&_svg]:w-12 [&_svg]:h-12 animate-swipe-5">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-chevron-compact-left icons-tabler-outline icon icon-tabler"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M13 20l-3 -8l3 -8" /></svg>
+                    </div>
+                </div>
+                <div class="relative bg-black lg:bg-white drop-shadow-2xl drop-shadow-blue-500/25 mx-4 sm:mx-auto xl:mx-0 xl:p-0 border border-neutral-200 rounded-4xl lg:rounded-2xl w-[80dvw] sm:w-[90dvw] lg:w-full max-w-screen-lg h-[80dvh] lg:h-180 overflow-hidden lg:hover:scale-105 origin-top-left transition translate-x-1/2 sm:translate-x-0 transform shrink-0"
+                    :class="{ 'translate-x-0 mx-auto' : isInteractive, 'translate-x-1/2' : !isInteractive }"
+                    x-on:touchstart="handleSwipeStart($event)"
+                    x-on:touchend="handleSwipeEnd($event)"
+                >
+                    <div class="sm:hidden top-4 left-1/2 z-1 absolute bg-black border border-neutral-200 rounded-full w-16 h-4 -translate-x-1/2 transform"></div>
+                    <div class="hidden lg:flex items-center gap-2 bg-neutral-200 px-4 py-2 border-neutral-200 border-b">
+                        <div class="bg-red-500 rounded-full w-3 h-3"></div>
+                        <div class="bg-yellow-500 rounded-full w-3 h-3"></div>
+                        <div class="bg-green-500 rounded-full w-3 h-3"></div>
+                    </div>
+                    <div class="relative p-2 sm:p-4 lg:p-0 border border-neutral-200 lg:border-0 rounded-3xl lg:rounded-none h-full overflow-hidden transition">
+                        <!-- Click to interact overlay -->
+                        <div id="interactive" class="z-10 absolute inset-0 flex justify-center items-center bg-black/50 cursor-pointer"
+                            x-show="!isInteractive"
+                        >
+                            <Button class="hidden invisible sm:visible sm:block pointer-events-none sm:pointer-events-auto" aria-controls="interactive" aria-label="Enable interactive."
+                                x-on:click="enableInteraction()"
+                                :aria-expanded="isInteractive"
+                            >
+                                <div class="flex items-center gap-3">
+                                    <div class="[&_svg]:stroke-white [&_svg]:w-6 [&_svg]:h-6">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icons-tabler-outline icon icon-tabler icon-tabler-click"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 12l3 0" /><path d="M12 3l0 3" /><path d="M7.8 7.8l-2.2 -2.2" /><path d="M16.2 7.8l2.2 -2.2" /><path d="M7.8 16.2l-2.2 2.2" /><path d="M12 12l9 3l-4 2l-2 4l-3 -9" /></svg>
+                                    </div>
+                                    <span>Click to Interact</span>
+                                </div>
+                            </Button>
+                        </div>
+                        <ButtonIcon type="button" class="top-4 sm:top-6 lg:top-4 right-4 sm:right-6 lg:right-4 absolute" aria-controls="interactive" aria-label="Close interactive."
+                            x-show="isInteractive"
+                            x-cloak
+                            x-on:click="disableInteraction()"
+                            :aria-expanded="isInteractive"
+                        >
+                            <span class="[&_svg]:stroke-white [&_svg]:w-5 [&_svg]:h-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12"/><path d="M6 6l12 12"/></svg>
+                            </span>
+                        </ButtonIcon>
+                        <div class="rounded-2xl lg:rounded-none h-full overflow-y-auto scroll-smooth"
+                            :class="!isInteractive ? 'pointer-events-none' : ''"
+                            x-ref="scrollContainer"
+                        >
+                            <img src="/images/portfolio1.webp" alt="Website mockup" class="sm:hidden sm:invisible w-full" 
+                                x-show="currentImage === 1" 
+                            />
+                            <img src="/images/portfolio2.webp" alt="Website mockup" class="sm:hidden sm:invisible w-full" 
+                                x-show="currentImage === 2"
+                                x-cloak
+                            />
+                            <img src="/images/portfolio3.webp" alt="Website mockup" class="sm:hidden sm:invisible w-full" 
+                                x-show="currentImage === 3"
+                                x-cloak
+                            />
+                            <img src="/images/portfolio1-sm.webp" alt="Website mockup" class="hidden lg:hidden invisible lg:invisible sm:visible sm:block w-full" 
+                                x-show="currentImage === 1" 
+                            />
+                            <img src="/images/portfolio2-sm.webp" alt="Website mockup" class="hidden lg:hidden invisible lg:invisible sm:visible sm:block w-full" 
+                                x-show="currentImage === 2"
+                                x-cloak
+                            />
+                            <img src="/images/portfolio3-sm.webp" alt="Website mockup" class="hidden lg:hidden invisible lg:invisible sm:visible sm:block w-full" 
+                                x-show="currentImage === 3"
+                                x-cloak
+                            />
+                            <img src="/images/portfolio1-lg.webp" alt="Website mockup" class="hidden invisible lg:visible lg:block w-full" 
+                                x-show="currentImage === 1" 
+                            />
+                            <img src="/images/portfolio2-lg.webp" alt="Website mockup" class="hidden invisible lg:visible lg:block w-full" 
+                                x-show="currentImage === 2"
+                                x-cloak
+                            />
+                            <img src="/images/portfolio3-lg.webp" alt="Website mockup" class="hidden invisible lg:visible lg:block w-full" 
+                                x-show="currentImage === 3"
+                                x-cloak
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="flex flex-col justify-end mt-8 lg:mt-0 px-4 sm:px-8 xl:px-0">
+                <div>
+                    <div x-show="currentImage === 1">
+                        <H3>IronEdge Steel</H3>
+                        <Text class="mt-2">Corporate website for steel fabrication company.</Text>
+                        <Link href="https://work.renovisi.com/IronEdgeSteel.html" target="_blank" class="inline-block mt-1 underline">View Website</Link>
+                    </div>
+                    <div x-show="currentImage === 2" x-cloak>
+                        <H3>Savora</H3>
+                        <Text class="mt-2">Restaurant website for premium cuisine restaurant.</Text>
+                        <Link href="https://work.renovisi.com/Savora.html" target="_blank" class="inline-block mt-1 underline">View Website</Link>
+                    </div>
+                    <div x-show="currentImage === 3" x-cloak>
+                        <H3>Wander Barbershop</H3>
+                        <Text class="mt-2">Barbershop website for trendy urban barbershop.</Text>
+                        <Link href="https://work.renovisi.com/WanderBarbershop.html" target="_blank" class="inline-block mt-1 underline">View Website</Link>
+                    </div>
+                    <div class="flex gap-4 mt-8">
+                        <ButtonIcon aria-label="Show previous showcase."
+                            x-on:click="prev()"
+                        >
+                            <div class="[&_svg]:stroke-white [&_svg]:w-5 [&_svg]:h-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-chevron-left icons-tabler-outline icon icon-tabler"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 6l-6 6l6 6" /></svg>
+                            </div>
+                        </ButtonIcon>
+                        <ButtonIcon aria-label="Show next showcase."
+                            x-on:click="next()"
+                        >
+                            <div class="[&_svg]:stroke-white [&_svg]:w-5 [&_svg]:h-5">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-chevron-right icons-tabler-outline icon icon-tabler"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+                            </div>
+                        </ButtonIcon>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</Section>
+
+
+            

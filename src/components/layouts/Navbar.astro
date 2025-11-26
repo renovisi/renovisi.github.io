@@ -1,0 +1,90 @@
+---
+import ButtonLink from '../ButtonLink.astro';
+
+const { page } = Astro.props;
+const links = [
+    { name: "Service", href: '/#service' },
+    { name: "Works", href: '/#works' },
+    { name: "Pricing", href: '/#pricing' },
+    { name: "FAQ", href: '/#faq' },
+];
+---
+
+<nav class="top-0 z-10 fixed w-full transition"
+    x-data="{
+        breakpoint: 1024,
+        isNavbarMenuOpen: false,
+        isScrolled: window.scrollY > 0,
+        windowWidth: window.innerWidth
+    }"
+    x-on:resize.window="
+        windowWidth = window.innerWidth;
+        if (window.innerWidth >= breakpoint) {
+            isNavbarMenuOpen = false;
+        }
+    "
+    x-on:scroll.window="isScrolled = window.scrollY > 0;"
+    :class="{ 'bg-white shadow-md backdrop-blur-3xl': isScrolled, 'bg-transparent': !isScrolled }"
+>
+    <div class="relative flex justify-between items-center mx-auto px-4 sm:px-8 py-4 max-w-screen-xl">
+        <a href="/" class="font-bold text-blue-500 text-2xl lg:text-3xl tracking-tight prompt">reno<span class="text-black">visi</span></a>
+        <div class="flex items-center gap-2 lg:gap-6">
+            <!-- Navbar Menu -->
+            <div id="navbar-menu" class="lg:visible lg:block top-0 lg:top-auto lg:right-1/2 left-0 lg:left-auto z-10 lg:z-auto fixed lg:absolute bg-black/80 lg:bg-transparent w-dvw lg:w-auto h-dvh lg:h-auto transition-opacity lg:translate-x-1/2 duration-300 transform"
+                x-show="isNavbarMenuOpen || windowWidth >= breakpoint"
+                x-trap.noautofocus.noscroll="isNavbarMenuOpen && windowWidth < breakpoint"
+                x-on:click.self="isNavbarMenuOpen = false"
+                x-on:keydown.escape.window="isNavbarMenuOpen = false"
+                :inert="!isNavbarMenuOpen && windowWidth < breakpoint"
+                x-transition:enter="transition-opacity duration-300"
+                x-transition:enter-start="opacity-0"
+                x-transition:enter-end="opacity-100"
+                x-transition:leave="transition-opacity duration-300"
+                x-transition:leave-start="opacity-100"
+                x-transition:leave-end="opacity-0"
+                style="display: none;"
+                x-cloak
+            >
+                <!-- Navbar Menu Drawer -->
+                <div class="top-0 right-0 fixed lg:relative bg-gray-900 lg:bg-transparent px-4 sm:px-8 lg:px-0 py-4 lg:py-0 border-neutral-800 lg:border-0 border-r w-full sm:w-64 lg:w-auto h-dvh lg:h-auto overflow-y-auto lg:overflow-y-visible transition-transform lg:translate-x-0 duration-300 transform"
+                    :class="{ 'translate-x-0': isNavbarMenuOpen || windowWidth >= breakpoint, 'translate-x-full': !isNavbarMenuOpen && windowWidth < breakpoint }"
+                >
+                    <!-- Navbar Menu Close -->
+                    <button type="button" class="lg:hidden lg:invisible top-4 sm:top-5 right-4 sm:right-8 absolute hover:bg-blue-500 [&_svg]:stroke-white p-3 sm:p-4 border border-white hover:border-blue-500 rounded-full transition cursor-pointer" aria-controls="navbar-menu" aria-label="Close navbar menu."
+                        x-on:click="isNavbarMenuOpen = false"
+                        :aria-expanded="isNavbarMenuOpen"
+                    >
+                        <span class="[&_svg]:w-5 [&_svg]:h-5 shrink-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M18 6l-12 12"/><path d="M6 6l12 12"/></svg>
+                        </span>
+                    </button>
+                    <!-- END Navbar Menu Close -->
+                    <!-- Navbar Menu Links -->
+                    <ul class="lg:flex lg:items-center lg:gap-8 space-y-3 lg:space-y-0 mt-4 lg:mt-0 leading-0">
+                        {links.map((link) => (
+                            <li>
+                                <a href={link.href} class="sm:font-medium font-bold text-white lg:text-neutral-800 hover:text-blue-500 text-base sm:text-lg transition cursor-pointer prompt"
+                                    x-on:click="if (windowWidth < breakpoint) isNavbarMenuOpen = false"
+                                >{link.name}</a>
+                            </li>
+                        ))}
+                    </ul>
+                    <!-- END Navbar Menu Links -->
+                </div>
+                <!-- END Navbar Menu Drawer -->
+            </div>  
+            <!-- END Navbar Menu --> 
+            <ButtonLink href="https://wa.me/60133377464?text=Hello%2C%20I%E2%80%99m%20interested%20to%20build%20a%20website%20for%20my%20business" target="_blank" >Get In Touch</ButtonLink>
+            <!-- Navbar Menu Open -->
+            <button type="button" class="lg:hidden lg:invisible hover:bg-blue-600 disabled:opacity-60 [&_svg]:stroke-blue-500 hover:[&_svg]:stroke-white p-3 sm:p-4 border border-blue-500 rounded-full transition cursor-pointer" aria-controls="navbar-menu" aria-label="Open navbar menu."
+                x-on:click="isNavbarMenuOpen = true"
+                :aria-expanded="isNavbarMenuOpen"
+            >
+                <span class="[&_svg]:w-5 [&_svg]:h-5 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l16 0"/><path d="M4 12l16 0"/><path d="M4 18l16 0"/></svg>
+                </span>
+            </button>
+            <!-- END Navbar Menu Open -->
+        </div>
+    </div>
+</nav>

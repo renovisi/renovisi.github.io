@@ -76,7 +76,7 @@ import ButtonIcon from '../ButtonIcon.astro';
                             } else {
                                 // window.innerWidth >= this.breakpoint ? this.scrollContainer.scrollTop += 1 : this.scrollContainer.scrollTop += 100;
                                 // console.log(navigator.userAgent, navigator.platform)
-                                const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+                                const isIOS = (/iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)) && !navigator.userAgent.includes('Mac OS');
                                 if (window.innerWidth < this.breakpoint && isIOS) {
                                     this.scrollContainer.scrollTop += 100;
                                 } else {

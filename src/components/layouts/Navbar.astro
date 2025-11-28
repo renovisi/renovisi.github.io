@@ -1,4 +1,5 @@
 ---
+import Logo from '../Logo.astro';
 import ButtonLink from '../ButtonLink.astro';
 
 const { page } = Astro.props;
@@ -29,11 +30,7 @@ const links = [
     <div class="relative flex justify-between items-center mx-auto px-4 sm:px-8 py-4 max-w-screen-xl">
         <a href="/" class="flex items-start gap-px font-bold text-blue-500 text-2xl lg:text-3xl leading-8 lg:leading-6.75 tracking-[-1px] prompt">
             <span class="[&_svg]:w-6 [&_svg]:h-6 shrink-0">
-                <svg width="384" height="384" viewBox="0 0 384 384" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M224 224H304C348.183 224 384 259.817 384 304V384H304C259.817 384 224 348.183 224 304V224Z" fill="#2B7FFF"/>
-                    <path d="M128 0H240C301.856 0 352 50.1441 352 112V144C352 205.856 301.856 256 240 256H128V0Z" fill="#2B7FFF"/>
-                    <path d="M0 0H160V384H0V0Z" fill="#2B7FFF"/>
-                </svg>
+                <Logo/>
             </span>
             <span class="relative -ml-0.5">
                 <span>eno</span><span class="text-black">visi</span>
@@ -73,11 +70,7 @@ const links = [
                     <!-- Navbar Menu Links -->
                     <a href="/" class="lg:hidden flex items-start gap-px mt-2 font-bold text-blue-500 text-2xl lg:text-3xl leading-8 lg:leading-6.75 tracking-[-1px] prompt">
                         <span class="[&_svg]:w-6 [&_svg]:h-6 shrink-0">
-                            <svg width="384" height="384" viewBox="0 0 384 384" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M224 224H304C348.183 224 384 259.817 384 304V384H304C259.817 384 224 348.183 224 304V224Z" fill="#2B7FFF"/>
-                                <path d="M128 0H240C301.856 0 352 50.1441 352 112V144C352 205.856 301.856 256 240 256H128V0Z" fill="#2B7FFF"/>
-                                <path d="M0 0H160V384H0V0Z" fill="#2B7FFF"/>
-                            </svg>
+                            <Logo/>
                         </span>
                         <span class="relative -ml-0.5">
                             <span>eno</span><span class="text-white">visi</span>
@@ -97,7 +90,7 @@ const links = [
                 <!-- END Navbar Menu Drawer -->
             </div>  
             <!-- END Navbar Menu --> 
-            <ButtonLink href="https://wa.me/60133377464?text=Hello%2C%20I%E2%80%99m%20interested%20to%20build%20a%20website%20for%20my%20business" target="_blank" >Get In Touch</ButtonLink>
+            <ButtonLink href="https://wa.me/60133377464?text=Hello%2C%20I%E2%80%99m%20interested%20to%20build%20a%20website%20for%20my%20business" target="_blank" >Talk To Us</ButtonLink>
             <!-- Navbar Menu Open -->
             <button type="button" class="lg:hidden lg:invisible hover:bg-blue-600 disabled:opacity-60 [&_svg]:stroke-blue-500 hover:[&_svg]:stroke-white p-3 sm:p-4 border border-blue-500 rounded-full transition cursor-pointer" aria-controls="navbar-menu" aria-label="Open navbar menu."
                 x-on:click="isNavbarMenuOpen = true"

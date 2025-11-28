@@ -1,4 +1,5 @@
 ---
+import Logo from '../Logo.astro';
 import Text from '../Text.astro';
 import Title3 from '../Title3.astro';
 import Title4 from '../Title4.astro';
@@ -10,13 +11,9 @@ import ButtonLink from '../ButtonLink.astro';
         <div class="flex lg:flex-row flex-col justify-between gap-8 lg:gap-16">
             <div>
                 <Title4 class="text-white prompt">Digitize Your Brand Today</Title4>
-                <ButtonLink href="https://wa.me/60133377464?text=Hello%2C%20I%E2%80%99m%20interested%20to%20build%20a%20website%20for%20my%20business" target="_blank" class="inline-block mt-6">Start Now</ButtonLink>
+                <ButtonLink href="https://wa.me/60133377464?text=Hello%2C%20I%E2%80%99m%20interested%20to%20build%20a%20website%20for%20my%20business" target="_blank" class="inline-block mt-6">Talk To Us</ButtonLink>
                 <div class="mt-8 xl:mt-16 [&_svg]:w-16 [&_svg]:h-16 [&_svg]:text-blue-500">
-                    <svg width="384" height="384" viewBox="0 0 384 384" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M320 257C354.794 257 383 285.206 383 320V383H320C285.206 383 257 354.794 257 320V257H320Z" stroke="currentColor" stroke-width="4"/>
-                        <path d="M224 1C294.14 1 351 57.8598 351 128C351 198.14 294.14 255 224 255H1V1H224Z" stroke="currentColor" stroke-width="4"/>
-                        <path d="M159 1V383H1V1H159Z" stroke="currentColor" stroke-width="4"/>
-                    </svg>
+                   <Logo />
                 </div>
             </div>
             <div class="flex justify-between gap-4 lg:gap-12">

@@ -1,4 +1,5 @@
 ---
+import Logo from '../Logo.astro';
 import Section from '../Section.astro';
 import H2 from '../H2.astro';
 import H4 from '../H4.astro';
@@ -6,11 +7,11 @@ import Text from '../Text.astro';
 ---
 
 <Section id="service" class="overflow-hidden">
-    <div class="grid lg:grid-cols-2 mx-auto max-w-screen-xl">
-        <div class="z-1 relative lg:col-span-1 px-4 sm:px-8 pb-8 sm:pb-12 lg:pb-16">
+    <div class="gap-12 lg:gap-16 grid lg:grid-cols-2 mx-auto max-w-screen-xl">
+        <div class="z-1 relative lg:col-span-1 px-4 sm:px-8">
             <H2>We Build Custom Designed Websites</H2>
-            <Text class="mt-6">We are a web development expert in developing a high converting websites that builds your online presence and support brand growth.</Text>
-            <ul class="space-y-2 mt-16">
+            <Text class="mt-6">We are web development experts in developing a high converting websites that builds your online presence and support brand growth.</Text>
+            <ul class="space-y-6 mt-12">
                 <!-- <li><H3 class="font-mono italic">Web Design & Development</H3></li>
                 <li><H3 class="font-mono italic">Web Application</H3></li>
                 <li><H3 class="font-mono italic">Web Consultation</H3></li>
@@ -20,30 +21,26 @@ import Text from '../Text.astro';
                 <img src="/images/nuri.webp" alt="Nuri image." class="shadow-blue-500/20 shadow-xl rounded-full w-24 sm:w-28 lg:w-32 h-24 sm:h-28 lg:h-32">
                 <div>
                     <H4>Nuri Kamaruzaman</H4>
-                    <div class="flex items-center gap-2.5">
+                    <div class="flex items-center gap-2.5 mt-2">
                         <span class="inline-block bg-black w-8 h-1"></span>
-                        <Text class="font-bold tracking-relaxed">Operation</Text>
+                        <Text class="font-bold tracking-relaxed">Operations</Text>
                     </div>
                 </div>
             </div>
-            <div class="top-4 left-24 sm:left-48 xl:left-64 relative flex items-center gap-4 w-fit">
+            <div class="top-6 left-24 sm:left-48 xl:left-64 relative flex items-center gap-4 w-fit">
                 <img src="/images/mkfizi.webp" alt="Fizi image." class="shadow-blue-500/20 shadow-xl rounded-full w-24 sm:w-28 lg:w-32 h-24 sm:h-28 lg:h-32">
                 <div>
                     <H4>Khafizi Noh</H4>
-                    <div class="flex items-center gap-2.5">
+                    <div class="flex items-center gap-2.5 mt-2">
                         <span class="inline-block bg-black w-8 h-1"></span>
                         <Text class="font-bold tracking-relaxed">Engineering</Text>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="relative flex justify-center items-center lg:col-span-1 mx-4 sm:mx-8 xl:mx-0 mt-16 sm:mt-24 lg:mt-0 lg:ml-16 p-16 sm:p-24 xl:p-32 rounded-4xl overflow-hidden">
+        <div class="relative flex justify-center items-center lg:col-span-1 mx-4 sm:mx-8 xl:mx-0 mt-16 lg:mt-0 lg:ml-16 p-16 sm:p-24 xl:p-32 rounded-4xl overflow-hidden">
             <div class="absolute inset-0 bg-pattern bg-pattern-lg opacity-10 w-full h-full"></div>
-            <svg class="drop-shadow-2xl drop-shadow-blue-500/50 animate-float" width="384" height="384" viewBox="0 0 384 384" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M256 256H320C355.346 256 384 284.654 384 320V384H320C284.654 384 256 355.346 256 320V256Z" fill="#3B82F6"/>
-                <path d="M0 0H224C294.692 0 352 57.3076 352 128V128C352 198.692 294.692 256 224 256H0V0Z" fill="#3B82F6"/>
-                <path d="M0 0H160V384H0V0Z" fill="#3B82F6"/>
-            </svg>
+            <Logo class="drop-shadow-2xl drop-shadow-blue-500/50 animate-float">
         </div>
     </div>
 </Section>

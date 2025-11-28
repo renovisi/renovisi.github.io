@@ -9,11 +9,11 @@ import ButtonIcon from '../ButtonIcon.astro';
 ---
 <Section id="works" class="overflow-hidden">
     <div class="mx-auto max-w-screen-xl">
-        <div class="lg:flex lg:justify-end lg:items-center lg:gap-16 lg:ml-auto px-4 sm:px-8 xl:px-0">
+        <div class="lg:flex lg:justify-end lg:items-center lg:gap-12 lg:ml-auto px-4 sm:px-8 xl:px-0">
             <p class="opacity-40 text-stroke-black font-black text-[5rem] text-stroke text-white sm:text-[8rem] xl:text-[12rem] uppercase text-nowrap leading-32 tracking-wide shrink-0">Works</p>
             <H2 class="pl-4 sm:pl-8 border-black border-l-8 max-w-lg lg:max-w-xl">We Build Websites That Build Brands</H2>
         </div>
-        <div class="relative flex lg:flex-row flex-col lg:gap-4 xl:gap-16 mt-16"
+        <div class="relative flex lg:flex-row flex-col lg:gap-8 xl:gap-16 mt-12 lg:mt-16"
             x-data="{ 
                 breakpoint: 480,
                 currentImage: 1,
@@ -235,20 +235,20 @@ import ButtonIcon from '../ButtonIcon.astro';
                 <div>
                     <div x-show="currentImage === 1">
                         <H3>IronEdge Steel</H3>
-                        <Text class="mt-2">Corporate website for steel fabrication company.</Text>
-                        <Link href="https://work.renovisi.com/IronEdgeSteel.html" target="_blank" class="inline-block mt-1 underline">View Website</Link>
+                        <Text class="mt-4">Corporate website for steel fabrication company.</Text>
+                        <Link href="https://work.renovisi.com/IronEdgeSteel.html" target="_blank" class="inline-block mt-2 underline">View Website</Link>
                     </div>
                     <div x-show="currentImage === 2" x-cloak>
                         <H3>Savora</H3>
-                        <Text class="mt-2">Restaurant website for premium cuisine restaurant.</Text>
-                        <Link href="https://work.renovisi.com/Savora.html" target="_blank" class="inline-block mt-1 underline">View Website</Link>
+                        <Text class="mt-4">Restaurant website for premium cuisine restaurant.</Text>
+                        <Link href="https://work.renovisi.com/Savora.html" target="_blank" class="inline-block mt-2 underline">View Website</Link>
                     </div>
                     <div x-show="currentImage === 3" x-cloak>
                         <H3>Wander Barbershop</H3>
-                        <Text class="mt-2">Barbershop website for trendy urban barbershop.</Text>
-                        <Link href="https://work.renovisi.com/WanderBarbershop.html" target="_blank" class="inline-block mt-1 underline">View Website</Link>
+                        <Text class="mt-4">Barbershop website for trendy urban barbershop.</Text>
+                        <Link href="https://work.renovisi.com/WanderBarbershop.html" target="_blank" class="inline-block mt-2 underline">View Website</Link>
                     </div>
-                    <div class="flex gap-4 mt-8">
+                    <div class="flex gap-4 mt-12">
                         <ButtonIcon aria-label="Show previous showcase."
                             x-on:click="prev()"
                         >

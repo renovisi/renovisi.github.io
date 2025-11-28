@@ -27,7 +27,18 @@ const links = [
     :class="{ 'bg-white shadow-md backdrop-blur-3xl': isScrolled, 'bg-transparent': !isScrolled }"
 >
     <div class="relative flex justify-between items-center mx-auto px-4 sm:px-8 py-4 max-w-screen-xl">
-        <a href="/" class="font-bold text-blue-500 text-2xl lg:text-3xl tracking-tight prompt">reno<span class="text-black">visi</span></a>
+        <a href="/" class="flex items-start gap-px font-bold text-blue-500 text-2xl lg:text-3xl leading-8 lg:leading-6.75 tracking-[-1px] prompt">
+            <span class="[&_svg]:w-6 [&_svg]:h-6 shrink-0">
+                <svg width="384" height="384" viewBox="0 0 384 384" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M224 224H304C348.183 224 384 259.817 384 304V384H304C259.817 384 224 348.183 224 304V224Z" fill="#2B7FFF"/>
+                    <path d="M128 0H240C301.856 0 352 50.1441 352 112V144C352 205.856 301.856 256 240 256H128V0Z" fill="#2B7FFF"/>
+                    <path d="M0 0H160V384H0V0Z" fill="#2B7FFF"/>
+                </svg>
+            </span>
+            <span class="relative -ml-0.5">
+                <span>eno</span><span class="text-black">visi</span>
+            </span>
+        </a>
         <div class="flex items-center gap-2 lg:gap-6">
             <!-- Navbar Menu -->
             <div id="navbar-menu" class="lg:visible lg:block top-0 lg:top-auto lg:right-1/2 left-0 lg:left-auto z-10 lg:z-auto fixed lg:absolute bg-black/80 lg:bg-transparent w-dvw lg:w-auto h-dvh lg:h-auto transition-opacity lg:translate-x-1/2 duration-300 transform"
@@ -60,10 +71,22 @@ const links = [
                     </button>
                     <!-- END Navbar Menu Close -->
                     <!-- Navbar Menu Links -->
-                    <ul class="lg:flex lg:items-center lg:gap-8 space-y-3 lg:space-y-0 mt-4 lg:mt-0 leading-0">
+                    <a href="/" class="lg:hidden flex items-start gap-px mt-2 font-bold text-blue-500 text-2xl lg:text-3xl leading-8 lg:leading-6.75 tracking-[-1px] prompt">
+                        <span class="[&_svg]:w-6 [&_svg]:h-6 shrink-0">
+                            <svg width="384" height="384" viewBox="0 0 384 384" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M224 224H304C348.183 224 384 259.817 384 304V384H304C259.817 384 224 348.183 224 304V224Z" fill="#2B7FFF"/>
+                                <path d="M128 0H240C301.856 0 352 50.1441 352 112V144C352 205.856 301.856 256 240 256H128V0Z" fill="#2B7FFF"/>
+                                <path d="M0 0H160V384H0V0Z" fill="#2B7FFF"/>
+                            </svg>
+                        </span>
+                        <span class="relative -ml-0.5">
+                            <span>eno</span><span class="text-white">visi</span>
+                        </span>
+                    </a>
+                    <ul class="lg:flex lg:items-center lg:gap-8 space-y-3 lg:space-y-0 mt-6 lg:mt-0 leading-0">
                         {links.map((link) => (
                             <li>
-                                <a href={link.href} class="sm:font-medium font-bold text-white lg:text-neutral-800 hover:text-blue-500 text-base sm:text-lg transition cursor-pointer prompt"
+                                <a href={link.href} class="sm:font-medium font-bold text-white lg:text-neutral-800 hover:text-blue-500 text-lg transition cursor-pointer prompt"
                                     x-on:click="if (windowWidth < breakpoint) isNavbarMenuOpen = false"
                                 >{link.name}</a>
                             </li>

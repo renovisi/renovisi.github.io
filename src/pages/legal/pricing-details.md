@@ -153,7 +153,7 @@ Additional maintenance is billed at **RM150/hour**.
 Clients may subscribe yearly for continuous support and upkeep.
 
 ### What’s Included:
-- Domain & hosting renewal reminders  
+- Domain & hosting renewal  
 - **+2 free maintenance hours** yearly  
 - Software updates (CMS, plugins, security patches)  
 - Monthly security scan  
@@ -163,10 +163,7 @@ Clients may subscribe yearly for continuous support and upkeep.
 - Priority support  
 - Minor content updates (text/image changes)  
 
-### Suggested Pricing (Yearly):
-- **Starter:** RM399/year  
-- **Advance:** RM699/year  
-- **Premium:** RM1,200+/year (custom)
+Price starts from RM300 per year (subject to market price for domain & hosting)
 
 ---
 

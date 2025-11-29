@@ -2,17 +2,24 @@
 * Global styles for markdown content.
 */
 
+h1, h2, h3, h4 {
+    font-family: 'Prompt', sans-serif;
+}
+
 /* Headings */
 .docs :where(h1) {
-    @apply font-black text-black text-5xl sm:text-6xl xl:text-8xl tracking-tight;
+    @apply font-extrabold text-black text-5xl sm:text-6xl xl:text-8xl tracking-tight;
+    font-family: 'Prompt', sans-serif;
 }
 
 .docs :where(h2) {
     @apply font-bold text-black text-3xl sm:text-4xl xl:text-6xl tracking-tight;
+    font-family: 'Prompt', sans-serif;
 }
 
 .docs :where(h3) {
     @apply font-bold text-black text-xl sm:text-2xl xl:text-4xl tracking-tight;
+    font-family: 'Prompt', sans-serif;
 }
 
 /* Paragraphs */

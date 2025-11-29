@@ -96,9 +96,9 @@ By engaging Renovisi Digital, the Client agrees to these terms.
 
 6.1 Maintenance hours included per package:
 
-* **Starter** — 5 hours
-* **Advance** — 10 hours
-* **Premium** — maintenance subject to agreed terms
+* **Starter** — 1 hours
+* **Advance** — 5 hours
+* **Premium** — maintenance hours subject to agreed terms
 
 6.2 Maintenance hours must be used within **12 months** from the date of Project Release unless otherwise stated.
 
